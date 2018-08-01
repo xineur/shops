@@ -1,0 +1,1 @@
+webpackJsonp([0],{vGYV:function(o,c,n){"use strict";console.log(123)}},["vGYV"]);
