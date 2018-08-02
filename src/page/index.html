@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style type="text/css">
+html,body{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+
+#homeWrapper{
+	width: 100%;
+	height: 100%;
+}
+#homeWrapper .contentWrapper{
+	width: auto;
+	height: 100%;
+}
+.CDJA, .CDJA:after,.CDJA:before,.CDJA1,.CDJA2,.CDJA3, .CDJA1:after,.CDJA1:before, .CDJA2:after,.CDJA3:before, .CDJA3:after,.CDJA2:before{
+    background: rgba(255,255,255,0.0001);
+}
+#homeWrapper .CDJA{
+	width: 157px;
+	height: 417px;
+	position: absolute;
+	margin: 100px 0 0 150px;
+}
+#homeWrapper .CDJA1,#homeWrapper .CDJA2,#homeWrapper .CDJA3{
+	position: absolute;
+}
+#homeWrapper .CDJA1{
+    top: 70px;
+    width: 16px;
+    height: 42px;
+    right: 100%;
+}
+#homeWrapper .CDJA2{
+    top: 254px;
+    width: 25px;
+    height: 59px;
+    right: 100%;
+}
+#homeWrapper .CDJA3{
+    top: 187px;
+    width: 26px;
+    height: 68px;
+    left: 100%;
+}
+.CDJA:after,.CDJA:before,.CDJA1:after,.CDJA1:before,.CDJA2:after,.CDJA2:before,.CDJA3:after,.CDJA3:before{
+	position: absolute;
+	content: '';
+	display: block;
+}
+#homeWrapper .CDJA:after{
+    width: 71px;
+    height: 144px;
+    right: 100%;
+    top: 111px;
+}
+#homeWrapper .CDJA:before{
+    width: 49px;
+    height: 173px;
+    left: 100%;
+    top: -1px;
+}
+#homeWrapper .CDJA1:after{
+    width: 40px;
+    height: 21px;
+    right: 100%;
+    bottom: 0;
+}
+#homeWrapper .CDJA1:before{
+    width: 16px;
+    height: 50px;
+    left: 0;
+    bottom: 57px;
+}
+#homeWrapper .CDJA2:after{
+    width: 16px;
+    height: 59px;
+    left: -59px;
+    top: -102px;
+}
+#homeWrapper .CDJA2:before{
+    width: 16px;
+    height: 36px;
+    bottom: 22px;
+    left: -34px;
+}
+#homeWrapper .CDJA3:after{
+    width: 21px;
+    height: 50px;
+    bottom: -35px;
+    left: -10px;
+    transform: rotateZ(45deg);
+}
+#homeWrapper .CDJA3:before{
+    width: 30px;
+    height: 50px;
+    top: 0;
+    right: -19px;
+}
+#homeWrapper #CDJA{
+	position: absolute;
+    top: -1px;
+    left: -84px;
+    z-index: -1;
+}
+</style>
+<body>
+	<div id="homeWrapper">
+		<div class="contentWrapper">
+		<div class="imgwrapper CDJA">
+			<div class="CDJA1"></div>
+			<div class="CDJA2"></div>
+			<div class="CDJA3"></div>
+			<img src="./6.png" id="CDJA" width="290">
+		</div>	
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript">
+	$.ajaxSetup ({ cache: false });
+	$('.imgwrapper').on('click',function(){
+		alert(1)
+	});
+	$('#CDJA').on('click',function(e){
+		e.stopPropagation();
+	})
+
+
+	methods = {
+		mouserwheel: function(){//滚轮事件
+			$('.contentWrapper').on('mouserwheel')
+		}
+	}
+</script>
+</html>
