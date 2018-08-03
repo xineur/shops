@@ -16,13 +16,30 @@ html,body{
 #homeWrapper{
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+	position: relative;
 }
-#homeWrapper .contentWrapper{
+#homeWrapper .shadeMap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+}
+#homeWrapper .mapWrapper{
 	width: auto;
 	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 .CDJA, .CDJA:after,.CDJA:before,.CDJA1,.CDJA2,.CDJA3, .CDJA1:after,.CDJA1:before, .CDJA2:after,.CDJA3:before, .CDJA3:after,.CDJA2:before{
-    background: rgba(255,255,255,0.0001);
+	background: rgba(255,255,255,0.0001);
 }
 #homeWrapper .CDJA{
 	width: 157px;
@@ -34,22 +51,22 @@ html,body{
 	position: absolute;
 }
 #homeWrapper .CDJA1{
-    top: 70px;
-    width: 16px;
-    height: 42px;
-    right: 100%;
+	top: 70px;
+	width: 16px;
+	height: 42px;
+	right: 100%;
 }
 #homeWrapper .CDJA2{
-    top: 254px;
-    width: 25px;
-    height: 59px;
-    right: 100%;
+	top: 254px;
+	width: 25px;
+	height: 59px;
+	right: 100%;
 }
 #homeWrapper .CDJA3{
-    top: 187px;
-    width: 26px;
-    height: 68px;
-    left: 100%;
+	top: 187px;
+	width: 26px;
+	height: 68px;
+	left: 100%;
 }
 .CDJA:after,.CDJA:before,.CDJA1:after,.CDJA1:before,.CDJA2:after,.CDJA2:before,.CDJA3:after,.CDJA3:before{
 	position: absolute;
@@ -57,89 +74,156 @@ html,body{
 	display: block;
 }
 #homeWrapper .CDJA:after{
-    width: 71px;
-    height: 144px;
-    right: 100%;
-    top: 111px;
+	width: 71px;
+	height: 144px;
+	right: 100%;
+	top: 111px;
 }
 #homeWrapper .CDJA:before{
-    width: 49px;
-    height: 173px;
-    left: 100%;
-    top: -1px;
+	width: 49px;
+	height: 173px;
+	left: 100%;
+	top: -1px;
 }
 #homeWrapper .CDJA1:after{
-    width: 40px;
-    height: 21px;
-    right: 100%;
-    bottom: 0;
+	width: 40px;
+	height: 21px;
+	right: 100%;
+	bottom: 0;
 }
 #homeWrapper .CDJA1:before{
-    width: 16px;
-    height: 50px;
-    left: 0;
-    bottom: 57px;
+	width: 16px;
+	height: 50px;
+	left: 0;
+	bottom: 57px;
 }
 #homeWrapper .CDJA2:after{
-    width: 16px;
-    height: 59px;
-    left: -59px;
-    top: -102px;
+	width: 16px;
+	height: 59px;
+	left: -59px;
+	top: -102px;
 }
 #homeWrapper .CDJA2:before{
-    width: 16px;
-    height: 36px;
-    bottom: 22px;
-    left: -34px;
+	width: 16px;
+	height: 36px;
+	bottom: 22px;
+	left: -34px;
 }
 #homeWrapper .CDJA3:after{
-    width: 21px;
-    height: 50px;
-    bottom: -35px;
-    left: -10px;
-    transform: rotateZ(45deg);
+	width: 21px;
+	height: 50px;
+	bottom: -35px;
+	left: -10px;
+	transform: rotateZ(45deg);
 }
 #homeWrapper .CDJA3:before{
-    width: 30px;
-    height: 50px;
-    top: 0;
-    right: -19px;
+	width: 30px;
+	height: 50px;
+	top: 0;
+	right: -19px;
 }
 #homeWrapper #CDJA{
 	position: absolute;
-    top: -1px;
-    left: -84px;
-    z-index: -1;
+	top: -1px;
+	left: -84px;
+	z-index: -1;
 }
 </style>
 <body>
 	<div id="homeWrapper">
-		<div class="contentWrapper">
-		<div class="imgwrapper CDJA">
-			<div class="CDJA1"></div>
-			<div class="CDJA2"></div>
-			<div class="CDJA3"></div>
-			<img src="./6.png" id="CDJA" width="290">
-		</div>	
+		<div class="mapWrapper">
+			<div class="imgwrapper CDJA">
+				<div class="CDJA1"></div>
+				<div class="CDJA2"></div>
+				<div class="CDJA3"></div>
+				<img src="./6.png" id="CDJA" width="290">
+			</div>	
 		</div>
 		
 	</div>
 </body>
 <script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./mousewheel.js"></script>
 <script type="text/javascript">
 	$.ajaxSetup ({ cache: false });
 	$('.imgwrapper').on('click',function(){
-		alert(1)
+		// alert(1)
 	});
 	$('#CDJA').on('click',function(e){
 		e.stopPropagation();
 	})
 
-
-	methods = {
-		mouserwheel: function(){//滚轮事件
-			$('.contentWrapper').on('mouserwheel')
+	var config = {
+		ratio: 1,
+		ox: 0,
+		oy: 0,
+		nx: 0,
+		ny: 0,
+	};
+	var methods = {
+		mapMousewheel: function(type){//页面缩放事件
+			console.log(config.ratio)
+			switch(type){
+				case 'up':
+				if(config.ratio >= 60){
+					return
+				};
+				config.ratio++;
+				$('.mapWrapper').css({"transform":'scale('+(1+config.ratio*0.01)+')'});
+				break;
+				case 'down':
+				if(config.ratio <= -60){
+					return
+				};
+				config.ratio--;
+				$('.mapWrapper').css({"transform":'scale('+(1+config.ratio*0.01)+')'});
+				break;
+			}
+		},
+		mapWheel: function(){//滚轮事件
+			$('.mapWrapper').on('mousewheel',function(e){
+				if(e.wheelDelta > 0){//上划事件
+					methods.mapMousewheel('up');
+				}else{//下滑事件
+					methods.mapMousewheel('down');
+				}
+			})
+		},
+		mapClick: function(){//点击up down事件
+			$(document).on('keyup',function(e){
+				switch(e.keyCode){
+					case 38://up
+					methods.mapMousewheel('up');
+					break;
+					case 40://down
+					methods.mapMousewheel('down');
+					break;
+				}
+			})
+		},
+		mousemove:function(){//拖动事件
+			$('#homeWrapper').on('mousedown',function(e){
+				$(this).append('<div class="shadeMap"></div>')
+				var ml = parseInt($(this).find('.mapWrapper').css('margin-left'));
+				var mt = parseInt($(this).find('.mapWrapper').css('margin-top'));
+				var ox = e.clientX - ml;
+				var oy = e.clientY - mt;
+				var $t = $(this).find('.mapWrapper');
+				$(document).on('mousemove',function(e){
+					var nx = e.clientX - ox;
+					var ny = e.clientY - oy;
+					$t.css({'margin-left': nx, 'margin-top': ny})
+				})
+				$(document).on('mouseup',function(){
+					$(this).off();
+					$t.siblings('.shadeMap').remove();
+				})
+			});
 		}
 	}
+	methods.mapWheel();
+	methods.mapClick();
+	methods.mousemove();
+	console.log(typeof parseInt('123xxx'))
 </script>
 </html>
