@@ -42,5 +42,9 @@
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
     "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "echarts": "^4.1.0",
+    "jquery": "^2.1.1"
   }
 }
