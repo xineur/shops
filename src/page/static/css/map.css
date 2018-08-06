@@ -1,0 +1,450 @@
+#mapWrapper{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	background: #2B2D3C;
+}
+#mapWrapper .minMap, #mapWrapper .mapWrapper{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#mapWrapper .mapWrapper{
+	width: 1600px;
+	height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    position: relative;
+}
+#mapWrapper .imghover, #mapWrapper .imghover:after,#mapWrapper .imghover:before{
+	background: rgba(255,255,255,0.0001);
+	/*background: red*/
+}
+
+#mapWrapper .imghover{
+	position: absolute;
+	z-index: 1;
+}
+#mapWrapper .imghover:after,#mapWrapper .imghover:before{
+	position: absolute;
+	content: '';
+	display: block;
+}
+#mapWrapper .imgwrapper{
+	position: absolute;
+	z-index: 1;
+}
+#mapWrapper .imghoverbox{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+#mapWrapper .Areaimg{
+	position: absolute;
+	z-index: -1;
+}
+#mapWrapper .Camera{
+	position: absolute;
+	z-index: -1;
+	display: none;
+}
+#mapWrapper .imgbox{
+	position: absolute;
+	z-index: 0;
+}
+#mapWrapper .imgbox .Areaimg{
+	transition: transform .2s;
+}
+#mapWrapper .imgShade{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -2;
+	transition: box-shadow .4s;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	border-radius: 50%;
+}
+/*A区样式*/
+#mapWrapper .AreaA{
+    width: 157px;
+    height: 417px;
+    left: 454px;
+    top: 124px;
+}
+#mapWrapper .AreaA1{
+	top: 70px;
+	width: 16px;
+	height: 42px;
+	right: 100%;
+}
+#mapWrapper .AreaA2{
+	top: 254px;
+	width: 25px;
+	height: 59px;
+	right: 100%;
+}
+#mapWrapper .AreaA3{
+    top: 186px;
+    width: 26px;
+    height: 69px;
+    right: -26px;
+}
+#mapWrapper .copyAreaA:after{
+	width: 71px;
+	height: 144px;
+	right: 100%;
+	top: 111px;
+}
+#mapWrapper .copyAreaA:before{
+	width: 44px;
+	height: 173px;
+	left: 100%;
+	top: -1px;
+}
+#mapWrapper .AreaA1:after{
+	width: 40px;
+	height: 21px;
+	right: 100%;
+	bottom: 0;
+}
+#mapWrapper .AreaA1:before{
+	width: 16px;
+	height: 50px;
+	left: 0;
+	bottom: 57px;
+}
+#mapWrapper .AreaA2:after{
+	width: 16px;
+	height: 59px;
+	left: -59px;
+	top: -102px;
+}
+#mapWrapper .AreaA2:before{
+	width: 34px;
+	height: 36px;
+	bottom: 22px;
+	left: -34px;
+}
+#mapWrapper .AreaA3:after{
+	width: 21px;
+	height: 50px;
+	bottom: -35px;
+	left: -10px;
+	transform: rotateZ(45deg);
+}
+#mapWrapper .AreaA3:before{
+	width: 30px;
+	height: 50px;
+	top: 0;
+	right: -19px;
+}
+#mapWrapper #AreaA{
+	top: -1px;
+	left: -84px;
+}
+#mapWrapper #CameraA {
+	left: -163px;
+    top: -59px;
+}
+/*A区样式*/
+/*B区样式*/
+#mapWrapper .AreaB{
+    top: 164px;
+    width: 229px;
+    left: 661px;
+    height: 462px;
+}
+#mapWrapper #AreaB{
+	left: -42px;
+    top: -2px;
+}
+#mapWrapper .copyAreaB:after{
+	width: 10px;
+    height: 114px;
+    top: 22px;
+    left: -5px;
+}
+#mapWrapper .copyAreaB:before{
+    width: 6px;	
+    height: 49px;
+    left: 100%;
+    top: 221px;
+}
+#mapWrapper .AreaB1{
+    width: 19px;
+    height: 242px;
+    top: 217px;
+    left: -18px;
+}
+#mapWrapper .AreaB1:after{
+    width: 24px;
+    height: 94px;
+    left: -23px;
+    top: 12px;
+}
+#mapWrapper .AreaB1:before{
+    width: 12px;
+    height: 13px;
+    left: -12px;
+}
+#mapWrapper .AreaB2{
+    width: 5px;
+    bottom: 0;
+    height: 41px;
+    right: -5px;
+}
+/*B区样式*/
+/*C区样式*/
+#mapWrapper .AreaC{
+	top: 235px;
+    left: 908px;
+    height: 395px;
+    width: 141px;
+}
+#mapWrapper .AreaC #AreaC{
+    top: -41px;
+    left: -15px;
+}
+#mapWrapper .AreaC .copyAreaC:before {
+	width: 16px;
+    height: 96px;
+    top: 16px;
+    left: -15px;
+}
+#mapWrapper .AreaC .copyAreaC:after {
+	width: 9px;
+    height: 13px;
+    bottom: -13px;
+    left: 51px;
+}
+#mapWrapper .AreaC .AreaC1{
+    width: 127px;
+    height: 112px;
+    right: -127px;
+    top: -7px;	
+}
+#mapWrapper .AreaC .AreaC2{
+	width: 60px;
+    height: 21px;
+    right: -60px;
+    bottom: 79px;
+}
+#mapWrapper .AreaC .AreaC3{
+    width: 79px;
+    height: 62px;
+    right: -79px;
+    top: 142px;
+}
+#mapWrapper .AreaC .AreaC1:before {
+	width: 99px;
+    top: -34px;
+    left: 4px;
+    height: 34px;
+}
+#mapWrapper .AreaC .AreaC1:after {
+    width: 62px;
+    height: 42px;
+    left: 0;
+    bottom: -41px;
+}
+#mapWrapper .AreaC .AreaC2:before {
+    width: 27px;
+    height: 14px;
+    left: 0;
+    bottom: -13px;
+}
+#mapWrapper .AreaC .AreaC2:after {
+    width: 14px;
+    top: -3px;
+    right: -14px;
+    height: 43px;
+}
+#mapWrapper .AreaC .AreaC3:before {
+	width: 50px;
+    height: 46px;
+    left: 0;
+    bottom: -46px;
+}
+#mapWrapper .AreaC .AreaC3:after {
+	width: 58px;
+    height: 25px;
+    right: -40px;
+    top: -9px;
+}
+/*C区样式*/
+/*D区样式*/
+#mapWrapper .AreaD{
+	width: 48px;
+    height: 100px;
+    left: 1170px;
+    top: 183px;
+}
+#mapWrapper .AreaD #AreaD{
+    top: 0;
+    left: -62px;
+}
+#mapWrapper .AreaD .copyAreaD:before {
+	width: 5px;
+    height: 29px;
+    top: 0;
+    right: -5px;
+}
+#mapWrapper .AreaD .copyAreaD:after {
+	width: 7px;
+    bottom: 0;
+    height: 35px;
+    right: -7px;
+}
+#mapWrapper .AreaD .AreaD1{
+    width: 34px;
+    bottom: -65px;
+    height: 66px;
+}
+#mapWrapper .AreaD .AreaD2{
+    width: 75px;
+    height: 29px;
+    bottom: -86px;
+    left: -62px;
+}
+/*#mapWrapper .AreaD .AreaD1:before {
+	width: 14px;
+    height: 49px;
+    right: -15px;
+    top: 17px;
+}
+#mapWrapper .AreaD .AreaD1:after {
+    width: 7px;
+    height: 56px;
+    right: -3px;
+    top: 10px;
+}*/
+#mapWrapper .AreaD .AreaD2:before {
+	height: 25px;
+    right: 0px;
+    width: 18px;
+    bottom: -24px;
+}
+#mapWrapper .AreaD .AreaD2:after {
+    height: 45px;
+    right: -41px;
+    width: 42px;
+    bottom: -24px;
+}
+/*D区样式*/
+/*E区样式*/
+#mapWrapper .AreaE{
+	left: 1131px;
+    top: 419px;
+    height: 138px;
+	width: 259px;
+}
+#mapWrapper .AreaE #AreaE{
+    top: -38px;
+    left: -4px;
+}
+#mapWrapper .AreaE .AreaE1{
+	width: 246px;
+    height: 32px;
+    bottom: -32px;
+    left: 8px;
+}
+#mapWrapper .AreaE .AreaE2{
+	left: 100%;
+    top: 0px;
+    width: 21px;
+    height: 83px;
+}
+#mapWrapper .AreaE .AreaE3{
+	top: -13px;
+    height: 13px;
+    width: 23px;
+    left: 0px;
+}
+#mapWrapper .AreaE .copyAreaE:before {
+	height: 13px;
+    left: 71px;
+    width: 59px;
+    top: -12px;
+}
+#mapWrapper .AreaE .copyAreaE:after {
+	height: 31px;
+    left: 143px;
+    width: 36px;
+    top: -30px;
+}
+#mapWrapper .AreaE .AreaE1:before {
+	height: 38px;
+    left: 0px;
+    width: 195px;
+    top: 100%;
+}
+#mapWrapper .AreaE .AreaE1:after {
+    height: 12px;
+    left: -12px;
+    width: 4px;
+    top: -83px;
+}
+
+#mapWrapper .AreaE .AreaE2:before {
+	height: 45px;
+    left: 100%;
+    width: 12px;
+    top: 0;
+}
+#mapWrapper .AreaE .AreaE2:after {
+    height: 38px;
+    right: -15px;
+    width: 21px;
+    top: -37px;
+}
+/*E区样式*/
+/*小框樣式*/
+#mapWrapper .minMap{
+    position: absolute;
+    top: 56px;
+    left: 26px;
+    width: 285px;
+    z-index: 3;
+    /*border: 1px dotted #ccc;*/
+    background: rgba(43,45,60,0.1);
+    overflow: hidden;
+}
+#mapWrapper .minMap .minAreaimg{
+    position: absolute;
+    
+}
+#mapWrapper .minMap .minAreaA{
+    top: 22px;
+    left: 66px
+}
+#mapWrapper .minMap .minAreaB{
+    left: 110px;
+    top: 29px;
+}
+#mapWrapper .minMap .minAreaC{
+    left: 157px;
+    top: 34px;
+}
+#mapWrapper .minMap .minAreaD{
+    top: 34px;
+    left: 196px;
+}
+#mapWrapper .minMap .minAreaE{
+    top: 68px;
+    left: 198px;
+}
+#mapWrapper .minMap .frame{
+    border: 1px dotted #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+/*小框樣式*/
