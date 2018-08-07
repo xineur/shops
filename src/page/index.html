@@ -12,50 +12,36 @@ html,body{
 	margin: 0;
 }
 
-.trimSize{
-	transform: scale(1.3333333333334);
-}
 
-.leftBtnGroup{
-	bottom: 37px;
-	left: 43px;
-	position: absolute;
-	z-index: 9;
-}
-.leftBtnGroup .layui-form-switch{
-	width: 21px;
-	height: 12px;
-	min-width: 21px;
-	padding: 0;
-	background: #2B2D3C;
-	border-color: #AAAAAA;
-}
-.leftBtnGroup .layui-form-onswitch{
-	border-color: #AAAAAA;
-	background: #2B2D3C;
-}
-.leftBtnGroup .layui-form-switch i{
-	top: 1px;
-    width: 10px;
-    height: 10px;
-    left: 2px;
-}
-.leftBtnGroup .layui-form-onswitch i{
-    left: 100%;
-    margin-left: -12px;
-}
 </style>
-<link rel="stylesheet" type="text/css" href="./static/js/layui/css/layui.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 <link rel="stylesheet" type="text/css" href="./static/css/map.css">
 <body>
 	<div id="mapWrapper">
 		<div class="leftBtnGroup layui-form layui-form-pane">
 			<div class="layui-input-block">
-		     123 <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest">
-		    </div>
-		    <div class="layui-input-block">
-		      <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest">
-		    </div>
+				<span class="name"><i class="icon icon-camera"></i>摄像头视野</span>
+				<div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="camera">
+					<em></em><i></i>
+				</div>
+			</div>
+			<div class="layui-input-block">
+				<span class="name"><i class="icon icon-cameraName"></i>摄像头名称</span>
+				<div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="cameraName">
+					<em></em><i></i>
+				</div>
+			</div>
+			<!-- <div class="layui-input-block">
+				<span class="name"><i class="icon icon-video"></i>监控预览</span>
+				<div class="layui-unselect layui-form-switch"  filter="cameraName">
+					<em></em><i></i>
+				</div>
+			</div> -->
+		</div>
+		<div class="tool">
+			<i class="icon icon-zoom"></i>
+			<i class="icon icon-mouse"></i>
+			<i class="icon icon-shrink"></i>
 		</div>
 		<div class="minMap">
 			<img src="./static/img/min6.png" width="52" class="minAreaA minAreaimg">
@@ -66,68 +52,68 @@ html,body{
 			<div class="frame"></div>
 		</div>
 		<div class="mapWrapper">
-		<!-- <div class="trimSize"> -->
-			<!-- A区 -->
-			<div class="AreaA imgbox">
-				<div class="imgShade"></div>
-				<img src="./static/img/shade6.png" data-src="6.png" id="AreaA" width="290" ondragstart="return false" class="Areaimg">
-				<img src="./static/img/CameraA.png" ondragstart="return false" width="428" class="Camera" id="CameraA">
-				<img src="./static/img/CameraAname.png" ondragstart="return false" width="428" class="Camera" id="CameraA">
+			<!-- <div class="trimSize"> -->
+				<!-- A区 -->
+				<div class="AreaA imgbox">
+					<div class="imgShade"></div>
+					<img src="./static/img/shade6.png" data-src="6.png" id="AreaA" width="290" ondragstart="return false" class="Areaimg">
+					<img src="./static/img/CameraA.png" ondragstart="return false" width="428" class="Camera CameraA" id="CameraA" filter="camera" >
+					<img src="./static/img/CameraAname.png" ondragstart="return false" width="428" class="Camera CameraA" filter="cameraName" id="CameraAname">
+				</div>
+				<div class="imgwrapper AreaA">
+					<div class="copyAreaA imghover imghoverbox"></div>
+					<div class="AreaA1 imghover"></div>
+					<div class="AreaA2 imghover"></div>
+					<div class="AreaA3 imghover"></div>
+				</div>
+				<!-- B区 -->
+				<div class="AreaB imgbox">
+					<div class="imgShade"></div>
+					<img src="./static/img/shade9.png" data-src="9.png" id="AreaB" width="278" ondragstart="return false" class="Areaimg">
+				</div>
+				<div class="imgwrapper AreaB">
+					<div class="copyAreaB imghover imghoverbox"></div>
+					<div class="AreaB1 imghover"></div>
+					<div class="AreaB2 imghover"></div>
+				</div>
+				<!-- C区 -->
+				<div class="AreaC imgbox">
+					<div class="imgShade"></div>
+					<img src="./static/img/shade10.png" data-src="10.png" id="AreaC" width="278" ondragstart="return false" class="Areaimg">
+				</div>
+				<div class="imgwrapper AreaC">
+					<div class="copyAreaC imghover imghoverbox"></div>
+					<div class="AreaC1 imghover"></div>
+					<div class="AreaC2 imghover"></div>
+					<div class="AreaC3 imghover"></div>
+				</div>
+				<!-- D区 -->
+				<div class="AreaD imgbox">
+					<div class="imgShade"></div>
+					<img src="./static/img/shade11.png" data-src="11.png" id="AreaD" width="118" ondragstart="return false" class="Areaimg">
+				</div>
+				<div class="imgwrapper AreaD">
+					<div class="copyAreaD imghover imghoverbox"></div>
+					<div class="AreaD1 imghover"></div>
+					<div class="AreaD2 imghover"></div>
+				</div>
+				<!-- E区 -->
+				<div class="AreaE imgbox">
+					<div class="imgShade"></div>
+					<img src="./static/img/shade12.png" data-src="12.png" id="AreaE" width="300" ondragstart="return false" class="Areaimg">
+				</div>
+				<div class="imgwrapper AreaE">
+					<div class="copyAreaE imghover imghoverbox"></div>
+					<div class="AreaE1 imghover"></div>
+					<div class="AreaE2 imghover"></div>
+					<div class="AreaE3 imghover"></div>
+				</div>
 			</div>
-			<div class="imgwrapper AreaA">
-				<div class="copyAreaA imghover imghoverbox"></div>
-				<div class="AreaA1 imghover"></div>
-				<div class="AreaA2 imghover"></div>
-				<div class="AreaA3 imghover"></div>
-			</div>
-			<!-- B区 -->
-			<div class="AreaB imgbox">
-				<div class="imgShade"></div>
-				<img src="./static/img/shade9.png" data-src="9.png" id="AreaB" width="278" ondragstart="return false" class="Areaimg">
-			</div>
-			<div class="imgwrapper AreaB">
-				<div class="copyAreaB imghover imghoverbox"></div>
-				<div class="AreaB1 imghover"></div>
-				<div class="AreaB2 imghover"></div>
-			</div>
-			<!-- C区 -->
-			<div class="AreaC imgbox">
-				<div class="imgShade"></div>
-				<img src="./static/img/shade10.png" data-src="10.png" id="AreaC" width="278" ondragstart="return false" class="Areaimg">
-			</div>
-			<div class="imgwrapper AreaC">
-				<div class="copyAreaC imghover imghoverbox"></div>
-				<div class="AreaC1 imghover"></div>
-				<div class="AreaC2 imghover"></div>
-				<div class="AreaC3 imghover"></div>
-			</div>
-			<!-- D区 -->
-			<div class="AreaD imgbox">
-				<div class="imgShade"></div>
-				<img src="./static/img/shade11.png" data-src="11.png" id="AreaD" width="118" ondragstart="return false" class="Areaimg">
-			</div>
-			<div class="imgwrapper AreaD">
-				<div class="copyAreaD imghover imghoverbox"></div>
-				<div class="AreaD1 imghover"></div>
-				<div class="AreaD2 imghover"></div>
-			</div>
-			<!-- E区 -->
-			<div class="AreaE imgbox">
-				<div class="imgShade"></div>
-				<img src="./static/img/shade12.png" data-src="12.png" id="AreaE" width="300" ondragstart="return false" class="Areaimg">
-			</div>
-			<div class="imgwrapper AreaE">
-				<div class="copyAreaE imghover imghoverbox"></div>
-				<div class="AreaE1 imghover"></div>
-				<div class="AreaE2 imghover"></div>
-				<div class="AreaE3 imghover"></div>
-			</div>
+			<!-- </div> -->
 		</div>
-		<!-- </div> -->
-	</div>
-</body>
-<script type="text/javascript" src="./static/js/jquery.min.js"></script>
-<script type="text/javascript" src="./static/js/mousewheel.js"></script>
-<script type="text/javascript" src="./static/js/layui/layui.all.js"></script>
-<script src="./static/js/map.js"></script>
-</html>
+	</body>
+	<script type="text/javascript" src="./static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./static/js/mousewheel.js"></script>
+	<!-- <script type="text/javascript" src="./static/js/layui/layui.all.js"></script> -->
+	<script src="./static/js/map.js"></script>
+	</html>

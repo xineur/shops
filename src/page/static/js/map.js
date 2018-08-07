@@ -2,6 +2,8 @@
 		ratio: 0,//控制当前缩放比例
 		heightRatio: $('#mapWrapper').width() / $('#mapWrapper').height(),//获取屏幕的宽高比
 		scale: $('#mapWrapper').width() / $('.mapWrapper').width(),//大框比例
+		camera: true,//摄像头
+		cameraName: true,//摄像头名字
 		minscale: 0,
 		activeMap: 0,
 		oldratio: 0,//yu 当前缩放比例对比
@@ -11,7 +13,7 @@
 		ny: 0,
 	};
 	var methods = {
-		keyup: function(){//鍵盤事件
+		keyup: function(){//鍵盤事件   右侧工具栏事件
 			$(document).on('keyup',function(e){
 				switch(e.keyCode){
 					case 38://up
@@ -26,6 +28,12 @@
 					$('.mapWrapper').css({transform:'scale(1)',marginLeft: 0, marginTop: 0});
 					$('.frame').css({transform:'scale(1)',left: 0, top: 0});
 				}
+			});
+			$('.icon-zoom').on('click',function(){
+				utils.mapMousewheel('up');
+			});
+			$('.icon-shrink').on('click',function(){
+				utils.mapMousewheel('down');
 			})
 		},
 		mousemove:function(){//拖动事件
@@ -132,7 +140,7 @@
 				}else{//下滑事件
 					utils.mapMousewheel('down');
 				}
-			})
+			});
 		},
 		hover: function(){//鼠标移入事件
 			$('.imghover').hover(function(){
@@ -150,6 +158,7 @@
 		click: function(){//地图点击事件
 			$('.imgwrapper').on('click',function(){
 				utils.mapActive.call(this);
+				$(this).addClass('active').siblings('.active').removeClass('active');
 				$(this).data({'img': true}).siblings('.imgwrapper').each(function(){
 					if($(this).data('img')){
 						$(this).data({'img': false});
@@ -213,6 +222,41 @@
 					}	
 				})
 			})
+		},
+		checkbox: function(){//左侧工具栏事件
+			$('.layui-form-switch').on('click',function(){
+				$(this).toggleClass('layui-form-onswitch');
+				if($(this).hasClass('layui-form-onswitch')){
+					switch($(this).attr('filter')){
+						case 'camera':
+							config.camera = true;
+							$('.active').prev('.imgbox').find('.Camera[filter="camera"]').show();
+						break;
+						case 'cameraName':
+							config.cameraName = true;
+							$('.active').prev('.imgbox').find('.Camera[filter="cameraName"]').show();
+						break;
+					}
+				}else{
+					switch($(this).attr('filter')){
+						case 'camera':
+							config.camera = false;
+							config.cameraName = false;
+							$('.layui-form-switch[filter="cameraName"]').removeClass('layui-form-onswitch');
+							$('.Camera').hide();
+						break;
+						case 'cameraName':
+							config.cameraName = false;
+							$('.Camera[filter="cameraName"]').hide();
+						break;
+					}
+				}
+			})
+		},
+		stop:function(){//防止冒泡事件
+			$('.tool .icon,.layui-unselect').on('mousedown',function(e){
+				e.stopPropagation();
+			});
 		}
 	};
 	var utils = {
@@ -250,7 +294,12 @@
 			}
 			var img = $('#'+name);
 			img.attr('src','./static/img/'+img.data('src')).css({transform: 'scale(1.05)'}).siblings('.imgShade').css({'box-shadow': '0 0 90px 0 #222',background: '#26272F'}).parent('.imgbox').css({zIndex: 1});
-			img.siblings('.Camera').show()
+			if(config.camera){
+				img.siblings('.Camera[filter="camera"]').show()
+			}if(config.cameraName){
+				img.siblings('.Camera[filter="cameraName"]').show()
+			}
+			
 		},
 		mapUnactive: function(){//鼠标移出  点击
 			if($(this).closest('.imgwrapper').data('img')){
@@ -276,7 +325,4 @@
 		for(var i in methods){
 			methods[i]()
 		}
-		layui.use(['form'], function(){
-			
-		})
 	})()

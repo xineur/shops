@@ -7,8 +7,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>webpack-cli</title>
 </head>
+<style type="text/css">
+.content{
+	position: absolute;
+	top: 61px;
+	left: 72px;
+	bottom: 0;
+	right: 0;
+}
+html,body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+iframe{
+	border: none;
+}
+.market {
+    position: relative;
+    height: 100%;
+}
+.market .marketTop {
+    height: 61px;
+    width: 100%;
+    background: #2F3242;
+    box-shadow: -20px 0 10px 0px #2f2f2f;
+    position: relative;
+    z-index: 10;
+}
+.market .marketTop .logo{
+    margin-left: 95px;
+    display: inline-block;
+    height: 32px;
+    margin-top: 13px;
+}
+.market .marketTab{
+    width: 72px;
+    position: absolute;
+    top: 61px;
+    bottom: 0;
+    left: 0;
+    background: #2F3241;
+    z-index: 9;
+}
+.market .marketTab .icon{
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+}
+.market .marketTab .marketToolBox{
+    margin-top: 162px;
+}
+.market .marketTab .marketToolBox .icon{
+    text-align: center;
+    line-height: 72px;
+    font-size: 22px;
+    color: #D7DAE1;
+    margin-top: 50px;
+}
+.market .marketTab .marketToolBox .icon:first-child{
+    margin-top: 0;
+    font-size: 28px;
+}
+.market .marketTab .marketToolBox .icon.active{
+    background: #2C2E3D;
+}
+</style>
 <body>
-    <div id="map" style="width:800px;height: 400px">
+    <ul class="market">
+        <li class="marketTop">
+            <div class="logo">
+                <img src="/src/img/logo.png" height="32">
+            </div>
+        </li>
+        <li class="marketTab">
+            <div class="marketToolBox">
+                <i class="icon icon-cameraName active"></i>
+                <i class="icon icon-new icon-d"></i>
+                <i class="icon icon-video"></i>
+            </div>
+        </li>
+    </ul>
+    <div class="content">
+    	<iframe src="./src/page/index.html" width="100%" height="100%"></iframe>
     </div>
 </body>
 </html>
