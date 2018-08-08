@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont-monitor';  /* project id 777009 */
-  src: url('//at.alicdn.com/t/font_777009_s80t5aat4zi.eot');
-  src: url('//at.alicdn.com/t/font_777009_s80t5aat4zi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_777009_s80t5aat4zi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_777009_s80t5aat4zi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_777009_s80t5aat4zi.svg#iconfont-monitor') format('svg');
+  src: url('//at.alicdn.com/t/font_777009_ios605vdzj.eot');
+  src: url('//at.alicdn.com/t/font_777009_ios605vdzj.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_777009_ios605vdzj.woff') format('woff'),
+  url('//at.alicdn.com/t/font_777009_ios605vdzj.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_777009_ios605vdzj.svg#iconfont-monitor') format('svg');
 }
 ul,li{
     margin: 0;
@@ -41,6 +41,12 @@ ul,li{
 }
 .icon-new:after{
   content: '\e625';
+}
+.icon-seek:after{
+  content: '\e640';
+}
+.icon-loading:after{
+  content: '\e6ac';
 }
 .icon-d{
   position: relative;

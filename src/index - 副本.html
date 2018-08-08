@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webpack-cli</title>
+</head>
+<style type="text/css">
+.content{
+    position: absolute;
+    top: 61px;
+    left: 72px;
+    bottom: 0;
+    right: 0;
+}
+html,body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+iframe{
+    border: none;
+}
+.market {
+    position: relative;
+    height: 100%;
+}
+.market .marketTop {
+    height: 61px;
+    width: 100%;
+    background: #2F3242;
+    box-shadow: -20px 0 10px 0px #2f2f2f;
+    position: relative;
+    z-index: 10;
+}
+.market .marketTop .logo{
+    margin-left: 95px;
+    display: inline-block;
+    height: 32px;
+    margin-top: 13px;
+}
+.market .marketTab{
+    width: 72px;
+    position: absolute;
+    top: 61px;
+    bottom: 0;
+    left: 0;
+    background: #2F3241;
+    z-index: 9;
+}
+.market .marketTab .icon{
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+}
+.market .marketTab .marketToolBox{
+    margin-top: 162px;
+}
+.market .marketTab .marketToolBox .icon{
+    text-align: center;
+    line-height: 72px;
+    font-size: 22px;
+    color: #D7DAE1;
+    margin-top: 50px;
+}
+.market .marketTab .marketToolBox .icon:first-child{
+    margin-top: 0;
+    font-size: 28px;
+}
+.market .marketTab .marketToolBox .icon.active{
+    background: #2C2E3D;
+}
+.market .marketTop .seekWrapper {
+    width: 200px;
+    height: 40px;
+    position: relative;
+}
+.market .marketTop .seek{
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    color: #EEEEF0;
+    border-radius: 20px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    padding-left: 40px;
+    outline:none;
+}
+.market .marketTop .seekWrapper .icon{
+    font-size: 22px;
+    color: #fff;
+    position: absolute;
+}
+.market .marketTop .seek::-webkit-input-placeholder{
+    color:#EEEEF0;
+}
+.market .marketTop .seek::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#EEEEF0;
+}
+.market .marketTop .seek:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#EEEEF0;
+}
+.market .marketTop .seek:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color:#EEEEF0;
+}
+</style>
+<body>
+    <ul class="market">
+        <li class="marketTop">
+            <div class="logo">
+                <img src="/src/img/logo.png" height="32">
+            </div>
+            <div class="tool">
+                <div class="seekWrapper">
+                    <i class="icon icon-seek"></i>
+                    <input type="input" class="seek" placeholder="请输入摄像头编号">
+                </div>
+            </div>
+        </li>
+        <li class="marketTab">
+            <div class="marketToolBox">
+                <i class="icon icon-cameraName active"></i>
+                <i class="icon icon-new icon-d"></i>
+                <i class="icon icon-video"></i>
+            </div>
+        </li>
+    </ul>
+    <div class="content">
+        <iframe src="./src/page/index.html" width="100%" height="100%"></iframe>
+    </div>
+</body>
+</html>
