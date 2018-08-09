@@ -10,10 +10,9 @@ a {color: #333;}
 a:hover {color: #666;}
 input{ outline: none; }
 button {background: none;border:none}
-.clear:after{ content: " "; clear: both; display: block; }
 h1,h2,h3,h4,h5,h6{font-style: normal;margin:0;padding:0;font-weight: normal;}
 .clear:after{ content: " "; clear: both; display: block; }
-.header {height:72px;padding-left:72px;padding-right:18px;}
+.header {height:72px;padding-left:72px;padding-right:18px;position: relative;z-index: 2;box-shadow: 0 0 10px 0 #272727;}
 .header .logo{padding-left:41px;padding-top:18px;}
 .header .right-bar {float: right;padding-top:7px;}
 .header .search {width: 234px;
@@ -52,11 +51,11 @@ h1,h2,h3,h4,h5,h6{font-style: normal;margin:0;padding:0;font-weight: normal;}
 .marketTab{
   width: 72px;
   position: absolute;
-  top: 61px;
+  top: 72px;
   bottom: 0;
   left: 0;
   background: #2F3241;
-  z-index: 9;
+  z-index: 1;
 }
 .marketTab .icon{
   width: 72px;
@@ -72,6 +71,11 @@ h1,h2,h3,h4,h5,h6{font-style: normal;margin:0;padding:0;font-weight: normal;}
   font-size: 22px;
   color: #D7DAE1;
   margin-top: 50px;
+}
+.marketTab .marketToolBox>a{
+  text-align: center;
+  margin-top: 50px;
+  display: block;
 }
 .marketTab .marketToolBox .icon:first-child{
   margin-top: 0;
@@ -157,6 +161,49 @@ body,html{
   bottom: 0;
 }
 
+
+.allLoading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2B2D3C;
+  z-index: 9999;
+}
+@keyframes mymove
+{
+  from {transform: rotate(0);}
+  to {transform: rotate(360deg);}
+}
+
+.allLoading .icon{
+  font-size: 72px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 72px;
+  height: 72px;
+  animation:mymove 5s linear infinite;
+  text-align: center;
+  line-height: 72px;
+}
+.allLoading span{
+  position: absolute;
+  top: 169px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100px;
+  height: 72px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 100;
+}
 
 
 

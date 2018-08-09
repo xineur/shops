@@ -14,7 +14,7 @@
 		imgs:['/src/image/shade12.png','/src/image/shade11.png','/src/image/shade10.png','/src/image/shade9.png','/src/image/shade6.png']
 	};
 	var methods = {
-		keyup: function(){//鍵盤事件   右侧工具栏事件
+		keyup: function(){//鍵盤事件   右侧工具栏事件   缩放事件
 			$(document).on('keyup',function(e){
 				switch(e.keyCode){
 					case 38://up
@@ -143,12 +143,65 @@
 				}
 			});
 		},
-		hover: function(){//鼠标移入事件
+		hover: function(){//鼠标移入事件    高亮
 			$('.imghover').hover(function(){
 				utils.mapActive.call(this)
 			},function(){
 				utils.mapUnactive.call(this)
 			})
+		},
+		click: function(){//地图点击事件    高亮
+			$('.imgwrapper').on('click',function(){
+				utils.mapActive.call(this);
+				$(this).addClass('active').siblings('.active').removeClass('active');
+				$(this).data({'img': true}).siblings('.imgwrapper').each(function(){
+					if($(this).data('img')){
+						$(this).data({'img': false});
+						utils.mapUnactive.call(this)
+					}
+				})
+			})
+		},
+		select: function(){//下拉框切换事件    高亮 初始
+			utils.mapActive.call($('.imgwrapper').eq(0));
+            $('.imgwrapper').eq(0).addClass('active').siblings('.active').removeClass('active');
+			$('.imgwrapper').eq(0).data({'img': true}).siblings('.imgwrapper').each(function(){
+				if($(this).data('img')){
+					$(this).data({'img': false});
+					utils.mapUnactive.call(this)
+				}
+			})
+		    layui.use(['form'], function(){
+		        layui.form.on('select(select)', function(d){
+		            var text = '';
+		            switch(d.value){
+		                case '1':
+		                    text = 'A区摄像头(10/10)';
+		                break;
+		                case '2':
+		                    text = 'B区摄像头(0/0)';
+		                break;
+		                case '3':
+		                    text = 'C区摄像头(0/0)';
+		                break;
+		                case '4':
+		                    text = 'D区摄像头(0/0)';
+		                break;
+		                case '5':
+		                    text = 'E区摄像头(0/0)';
+		                break;
+		            }
+		            $('.tit').text(text);
+		            utils.mapActive.call($('.imgwrapper').eq(d.value-1));
+		            $('.imgwrapper').eq(d.value-1).addClass('active').siblings('.active').removeClass('active');
+					$('.imgwrapper').eq(d.value-1).data({'img': true}).siblings('.imgwrapper').each(function(){
+						if($(this).data('img')){
+							$(this).data({'img': false});
+							utils.mapUnactive.call(this)
+						}
+					})
+		        });
+		    })
 		},
 		setheight: function(){//初始化事件
 			$('.mapWrapper').height($('.mapWrapper').width() / config.heightRatio);
@@ -180,18 +233,6 @@
 				}
 			}
 			load();
-		},
-		click: function(){//地图点击事件
-			$('.imgwrapper').on('click',function(){
-				utils.mapActive.call(this);
-				$(this).addClass('active').siblings('.active').removeClass('active');
-				$(this).data({'img': true}).siblings('.imgwrapper').each(function(){
-					if($(this).data('img')){
-						$(this).data({'img': false});
-						utils.mapUnactive.call(this)
-					}
-				})
-			})
 		},
 		framemosemove:function(){//小框拖動事件
 			$('.frame').off().on('mousedown',function(e){

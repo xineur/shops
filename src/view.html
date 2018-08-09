@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>详细信息</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <link rel="stylesheet" type="text/css" href="/src/css/css.css">
+    <link rel="stylesheet" type="text/css" href="/src/js/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/view.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="right-bar">
+            <div class="seekWrapper">
+                <i class="icon icon-seek"></i>
+                <input type="input" class="seek" placeholder="请输入摄像头编号">
+            </div>
+            <span class="icons icon1"></span>
+            <span class="icons icon2"></span>
+            <div class="avatar">
+                <img src="/src/image/ava.png" alt="">
+            </div>
+            <span class="arrow"></span>
+        </div>
+        <div class="logo"><img src="/src/image/logo.png" alt=""></div>
+    </div>
+    <div class="marketTab">
+        <div class="marketToolBox">
+            <a href="/"><i class="icon icon-cameraName"></i></a>
+            <a href="/src/list.html"><i class="icon icon-new icon-d"></i></a>
+            <a href="/src/view.html"><i class="icon icon-video active"></i></a>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="con">
+            <div class="hd clear">
+                <div class="right-bar">摄像头分组显示
+                    <div class="select">
+                        <form class="layui-form" action="">
+                            <select name="modules"  lay-filter="select">
+                                <option value="1">A区摄像头</option>
+                                <option value="2">B区摄像头</option>
+                                <option value="3">C区摄像头</option>
+                                <option value="4">D区摄像头</option>
+                                <option value="5">E区摄像头</option>
+                            </select>
+                        </form>      
+                    </div>
+                </div>
+                <span class="tit">A区摄像头(10/10)</span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+         <div id="view">
+            <div>
+                <div id="list_Myview" style="display: none;">
+                <div class="sl_top">
+                    <p><span>Cam001</span>2018.02.10 02:08pm</p>
+                </div>
+                <video id="sl_name" controls="controls" autoplay="autoplay" controlsList="nodownload" preload="autoplay" controls="false" load()>
+                    <!-- 兼容 Firefox -->
+                    <source src="/src/image/movie.ogg"  type="video/ogg" />
+                    <!-- 兼容 Safari/Chrome -->
+                    <source src=""  type="video/mp4" />
+                    <!-- 如果浏览器不支持video标签，则使用flash -->
+                    <embed src="" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>
+                </video>
+            </div>
+            <div id="list_view">
+                <ul>
+                    <!--<li>-->
+                        <!--<a>-->
+                            <!--<input class="state" type="hidden" name="001" />-->
+                            <!--<div>-->
+                                <!--<img onerror="this.src='image/image-placeholder.png'" src="../image/p1.png" alt="title"/>-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<p><i class="icon"></i> canm001</p>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            </div>
+        </div> 
+    </div>
+</body>
+<script type="text/javascript" src="/src/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
+<script type="text/javascript" src="/src/js/view.js"></script>
+<script type="text/javascript">
+</script>
+</html>
