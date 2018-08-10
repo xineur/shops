@@ -11,7 +11,7 @@
 		oy: 0,
 		nx: 0,
 		ny: 0,
-		imgs:['/src/image/shade12.png','/src/image/shade11.png','/src/image/shade10.png','/src/image/shade9.png','/src/image/shade6.png']
+		imgs:['/src/image/12.png','/src/image/11.png','/src/image/10.png','/src/image/9.png','/src/image/6.png']
 	};
 	var methods = {
 		keyup: function(){//鍵盤事件   右侧工具栏事件   缩放事件

@@ -22,11 +22,12 @@ textarea{resize:vertical}
 .error{color:#F00;font-size:12px}
 label,button{cursor:pointer}
 .clearfix:after{content:'\20';display:block;height:0;clear:both}
-.clearfix{zoom:1}
+.clearfix{zoom:1}.clear{clear:both;height:0;line-height:0;font-size:0;visibility:hidden;overflow:hidden}
 .wordwrap{word-break:break-all;word-wrap:break-word}
 pre.wordwrap{white-space:pre-wrap}
 
 img{border:0}
+
 
 
 
