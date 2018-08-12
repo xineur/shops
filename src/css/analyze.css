@@ -1,0 +1,110 @@
+.commontool .analyze-tab{
+	height: 100%;
+	padding:  0 50px;
+	overflow: hidden;
+}
+.commontool .analyze-tab .analyze-item {
+	line-height: 50px;
+	padding: 0 20px;
+	color: #EEEEF0;
+	margin-left: 30px;
+	display: inline-block;
+	transition: background .3s;
+	cursor: pointer;
+}
+.commontool .analyze-tab .analyze-item.active {
+	background: #7880A4;
+	box-shadow: 0 0 4px 0 #6B7398;
+}
+.commontool .analyze-tab .analyze-item:hover{
+	background: #7880A4;
+	box-shadow: 0 0 4px 0 #6B7398;
+}
+#analyze{
+	height: 100%;
+	width: 100%;
+}
+#analyze .analyzeTop{
+	height: 60%;width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	position: relative;
+	border-radius: 4px;
+}
+#analyze .analyzeBottom{
+	height: 40%;width: 100%;
+	padding: 0 10px 10px;
+	box-sizing: border-box;
+}
+#analyze .analyzeBottom .anayyzeBoxWrapper{
+	width: 65%;
+	height: 100%;
+	float: left;
+	padding-right: 5px;
+	box-sizing: border-box;
+	position: relative;
+}
+.rightC{
+	background: #2F3243;
+	background: linear-gradient(#2F3243,#242431);
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#analyze .analyzeBottom .anayyzeBoxWrapper:last-child{
+	width: 35%;
+	padding-left: 5px;
+	padding-right: 0;
+}
+#analyze .analyzeTop #analyzeLine{
+	height: 100%;
+	width: 100%;
+	background: #2F3243;
+	background: linear-gradient(#484D67,#2F3243);
+}
+#analyze .analyzeTop .statistics{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+#analyze .analyzeBottom #anayyzeRatio{
+	height: 100%;
+	width: 100%;
+	background: #2F3243;
+	background: linear-gradient(#2F3243,#242431);
+}
+#analyze .analyzeTop #statisNew, #analyze .analyzeTop #statisOld, #analyze .analyzeTop #statisGoods{
+	width: 120px;
+	height: 60px;
+	margin: 20px 20px 0;
+	float: left;
+}
+.anayyzeBoxWrapper .layui-input-block{
+	width: 200px;
+	position: absolute;
+	top: 6px;
+	right: 15px;
+}
+.anayyzeBoxWrapper .layui-input-block .layui-input{
+	background: transparent;
+	height: 30px;
+	border-radius: 15px;
+	color: #eeeef0;
+}
+.layui-form-select dl dd{
+	color: #666;
+}
+.layui-form-select dl dd.layui-this{
+	background-color: #6E769B
+}
+.layui-colla-item ,.layui-collapse, .layui-colla-content{
+	border: none;
+}
+.layui-colla-title, .layui-colla-content {
+	color: #eeeef0;
+}
+.layui-colla-content{
+	font-size: 12px;
+	font-weight: 100
+}

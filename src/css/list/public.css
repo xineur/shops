@@ -1,5 +1,5 @@
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
-html{color:#000;overflow-y:scroll;overflow:-moz-scrollbars-vertical}
+html{color:#000;}
 body,button,input,select,textarea{font-size:12px;font-family:arial,'Hiragino Sans GB','Microsoft Yahei','微软雅黑','宋体',\5b8b\4f53,Tahoma,Arial,Helvetica,STHeiti}
 h1,h2,h3,h4,h5,h6{font-size:100%}
 em{font-style:normal}
@@ -22,7 +22,7 @@ textarea{resize:vertical}
 .error{color:#F00;font-size:12px}
 label,button{cursor:pointer}
 .clearfix:after{content:'\20';display:block;height:0;clear:both}
-.clearfix{zoom:1}.clear{clear:both;height:0;line-height:0;font-size:0;visibility:hidden;overflow:hidden}
+
 .wordwrap{word-break:break-all;word-wrap:break-word}
 pre.wordwrap{white-space:pre-wrap}
 

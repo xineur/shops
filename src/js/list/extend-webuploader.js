@@ -177,8 +177,8 @@ jQuery(function(){
             wrapHeight = imgTop + wrapHeight;
             imgLeft = (index % (parseInt(wrapWidth/(thumbnailWidth+10)) ) ) * (thumbnailWidth+10);
         }
-        $queue.height(wrapHeight);
-        var $li = $('<li data-key="'+file.key+'"  data-src="'+file.src+'" data-sort="'+index+'" draggable="true" id="' + file.id + '" style="position:absolute;margin:0;cursor:move;width:'+thumbnailWidth+'px;height:'+thumbnailHeight+'px;left:'+imgLeft+'px;top:'+imgTop+'">' +
+        // $queue.height(wrapHeight);
+        var $li = $('<li data-key="'+file.key+'"  data-src="'+file.src+'" data-sort="'+index+'" draggable="true" id="' + file.id + '" style="position:absolute;margin:0;cursor:move;width:100%;height:100%;">' +
                 '<p class="title">' + file.name + '</p>' +
                 '<p class="imgWrap"></p>' + 
                 '<p class="progress"><span></span></p>' + '</li>'

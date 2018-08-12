@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>商场概览</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <link rel="stylesheet" type="text/css" href="/src/js/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <style type="text/css">
+    .layui-layout-admin .layui-body{
+        bottom: 0;
+        left: 72px;
+    }
+    .layui-layout-admin .layui-side{
+        width: 72px;
+    }
+    .common-nav,.layui-side-scroll{
+        width: 100%;
+        height: 100%;
+    }
+    .common-nav{
+        padding: 50px 0;
+        box-sizing: border-box;
+    }
+    .iconcur{
+        cursor: pointer;
+    }  
+    .common-nav .icon{
+        text-align: center;
+        line-height: 72px;
+        height: 72px;
+        width: 100%;
+        font-size: 28px;
+        color: #D7DAE1;
+        margin-top: 50px;
+    }
+    .common-nav .icon.active{
+        background: #2C2E3D;
+    }
+    .common-nav .icon>a{
+        width: 100%;
+        height: 100%;
+    }
+    .common-padding .icon{
+        padding: 0 20px;
+        text-align: center;
+    }
+    .commontool{
+        height: 50px;
+        width: 100%;
+        background: #6E769B;
+        position: absolute;
+    }
+    .layui-body>.content{
+        padding-top: 50px;
+        height: 100%;
+        box-sizing: border-box;
+        background: #292B39;
+        color: #EEEEF0
+    }
+    .layui-nav .common-input{
+        float: left;
+        height: 60px;
+        padding: 11px 0;
+        position: relative;
+        margin-left: 20px;
+    }
+    .layui-nav .common-input .layui-input{
+        border-radius: 19px;
+        padding-left: 38px;
+        background: transparent;
+        color: #EEEEF0;
+    }
+    .layui-nav .common-input .icon{
+        height: 38px;
+        width: 38px;
+        left: 1px;
+        position: absolute;
+        top: 11px;
+        line-height: 38px;
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+    }
+    .layui-input.seek::-webkit-input-placeholder{
+        color:#EEEEF0;
+    }
+    .layui-input.seek::-moz-placeholder{   /* Mozilla Firefox 19+ */
+        color:#EEEEF0;
+    }
+    .layui-input.seek:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+        color:#EEEEF0;
+    }
+    .layui-input.seek:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+        color:#EEEEF0;
+    }
+    .content
+</style>
+</head>
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo"><img src="/src/image/logo.png" alt=""></div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="common-input">
+                    <i class="icon icon-seek"></i>
+                    <input type="text" class="layui-input seek" placeholder="请输入摄像头编号">
+                </li>
+                <li class="common-input layui-nav-item">
+                    <i class="icons icon1 portrait"></i>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="/src/image/ava.png" class="layui-nav-img">
+                        四月
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">数据分析</a></dd>
+                        <dd><a href="">消息</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item common-padding"><i class="icon iconcur icon-exit"></i></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="common-nav">
+                    <li class="icon iconcur icon-cameraName active"><a href="/"></a></li>
+                    <li class="icon iconcur icon-new icon-d"><a href="/src/page/list.html"></a></li>
+                    <li class="icon iconcur icon-video"><a href="/src/page/view.html"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <div class="commontool"></div>
+            <!-- 内容主体区域 -->
+            <div class="content">内容主体区域</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/src/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
+<script type="text/javascript">
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</html>

@@ -1,0 +1,168 @@
+body{
+	overflow: hidden;
+}
+.layui-layout-admin .layui-body{
+	bottom: 0;
+	left: 0;
+}
+.layui-layout-admin .layui-side{
+	width: 72px;
+}
+.common-nav,.layui-side-scroll{
+	width: 100%;
+	height: 100%;
+}
+.common-nav{
+	padding: 50px 0;
+	box-sizing: border-box;
+}
+.iconcur{
+	cursor: pointer;
+}  
+.common-nav .icon{
+	text-align: center;
+	line-height: 72px;
+	height: 72px;
+	width: 100%;
+	font-size: 28px;
+	color: #D7DAE1;
+	margin-top: 50px;
+}
+.common-nav .icon.active{
+	background: #2C2E3D;
+}
+.common-nav .icon>a{
+	width: 100%;
+	height: 100%;
+}
+.common-padding .icon{
+	padding: 0 20px;
+	text-align: center;
+}
+.commontool{
+	height: 50px;
+	width: 100%;
+	background: #6E769B;
+	position: absolute;
+}
+.layui-body>.content{
+	padding-top: 50px;
+	height: 100%;
+	box-sizing: border-box;
+	background: #292B39;
+	color: #EEEEF0;
+	overflow: hidden;
+}
+.layui-nav .common-input{
+	float: left;
+	height: 60px;
+	padding-top: 11px;
+	position: relative;
+	margin-left: 20px;
+	box-sizing: border-box;
+}
+.layui-nav .common-input .layui-input{
+	border-radius: 19px;
+	padding-left: 38px;
+	background: transparent;
+	color: #EEEEF0;
+}
+.layui-nav .common-input .icon{
+	height: 38px;
+	width: 38px;
+	left: 1px;
+	position: absolute;
+	top: 11px;
+	line-height: 38px;
+	text-align: center;
+	font-size: 18px;
+	display: inline-block;
+}
+.layui-input.seek::-webkit-input-placeholder{
+	color:#EEEEF0;
+}
+.layui-input.seek::-moz-placeholder{   /* Mozilla Firefox 19+ */
+	color:#EEEEF0;
+}
+.layui-input.seek:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+	color:#EEEEF0;
+}
+.layui-input.seek:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+	color:#EEEEF0;
+}
+.allLoading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #2B2D3C;
+	z-index: 9999;
+	color: #EEEEF0
+}
+@keyframes mymove
+{
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+.allLoading .icon{
+	font-size: 72px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	width: 72px;
+	height: 72px;
+	animation:mymove 5s linear infinite;
+	text-align: center;
+	line-height: 72px;
+}
+.allLoading span{
+	position: absolute;
+	top: 169px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	width: 100px;
+	height: 72px;
+	font-size: 24px;
+	text-align: center;
+	font-weight: 100;
+}
+.con .tit {
+	position: absolute;
+	top: 0;
+	left: 50px;
+	line-height: 50px;
+	color: #eeeef0;
+}
+.con .hd .right-bar {
+	float: right;
+	line-height: 50px;
+	color: #eeeef0
+}   
+.con .select {
+	display: inline-block;
+	width: 120px;
+    margin: 0 48px 0 30px;
+}
+.con .select .layui-input {
+	border-radius: 19px;
+	font-size: 13px;
+	height: 30px;
+	background: transparent;
+	color: #DBDDE6;
+}
+.layui-form-select dl dd{
+	color: #666;
+}
+.layui-form-select dl dd.layui-this{
+	background: #6E769B
+}
+.common-padding{
+	padding: 0px 15px
+}

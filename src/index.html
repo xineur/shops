@@ -6,159 +6,181 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width" />
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <link rel="stylesheet" type="text/css" href="/src/css/css.css">
     <link rel="stylesheet" type="text/css" href="/src/js/layui/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/icon.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/common.css">
     <link rel="stylesheet" type="text/css" href="/src/css/map.css">
 </head>
 <body>
-    <div class="header">
-        <div class="right-bar">
-            <!-- <div class="seekWrapper">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><a href="/"><img src="/src/image/logo.png" alt=""></a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="common-input">
                 <i class="icon icon-seek"></i>
-                <input type="input" class="seek" placeholder="请输入摄像头编号">
-            </div> -->
-            <!-- <span class="icons icon1"></span> -->
-            <span class="icons icon2"></span>
-            <div class="avatar">
-                <img src="/src/image/ava.png" alt="">
-            </div>
-            <span class="arrow"></span>
-        </div>
-        <div class="logo"><img src="/src/image/logo.png" alt=""></div>
+                <input type="text" class="layui-input seek" placeholder="请输入摄像头编号">
+            </li>
+            <li class="layui-nav-item" style="height: 60px;margin-left: 20px;">
+                <i class="icons icon1 portrait" style="padding: 20px 12px 0;"></i>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="/src/image/ava.png" class="layui-nav-img">
+                    四月
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/">首页</a></dd>
+                    <dd><a href="/src/page/analyze.html">数据分析</a></dd>
+                    <dd><a href="">消息</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item common-padding"><i class="icon iconcur icon-exit"></i></li>
+        </ul>
     </div>
-    <div class="marketTab">
-        <div class="marketToolBox">
-            <a href="/"><i class="icon icon-cameraName active"></i></a>
-            <a href="/src/page/list.html"><i class="icon icon-new icon-d"></i></a>
-            <a href="/src/page/view.html"><i class="icon icon-video"></i></a>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域 -->
+            <ul class="common-nav">
+                <li class="icon iconcur icon-cameraName active"><a href="/"></a></li>
+                <li class="icon iconcur icon-new icon-d"><a href="/src/page/list.html"></a></li>
+                <li class="icon iconcur icon-video"><a href="/src/page/view.html"></a></li>
+            </ul>
         </div>
     </div>
-    <div class="bd">
-        <div class="con">
-            <div class="hd clear">
-                <div class="right-bar">摄像头分组显示
-                    <div class="select">
-                        <form class="layui-form" action="">
-                            <select name="modules"  lay-filter="select">
-                                <option value="1">A区摄像头</option>
-                                <option value="2">B区摄像头</option>
-                                <option value="3">C区摄像头</option>
-                                <option value="4">D区摄像头</option>
-                                <option value="5">E区摄像头</option>
-                            </select>
-                        </form>      
+    <div class="layui-body" style="left: 72px;">
+        <div class="commontool">
+            <div class="con">
+                <div class="hd clear">
+                    <div class="right-bar">摄像头分组显示
+                        <div class="select">
+                            <form class="layui-form" action="">
+                                <select name="modules"  lay-filter="select">
+                                    <option value="1">A区摄像头</option>
+                                    <option value="2">B区摄像头</option>
+                                    <option value="3">C区摄像头</option>
+                                    <option value="4">D区摄像头</option>
+                                    <option value="5">E区摄像头</option>
+                                </select>
+                            </form>      
+                        </div>
                     </div>
+                    <span class="tit">A区摄像头(10/10)</span>
                 </div>
-                <span class="tit">A区摄像头(10/10)</span>
             </div>
         </div>
-    </div>
-    <div class="content">
-        <div id="mapWrapper">
-            <div class="leftBtnGroup layui-form layui-form-pane">
-                <div class="layui-input-block">
-                    <span class="name"><i class="icon icon-camera"></i>摄像头视野</span>
-                    <div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="camera">
+        <!-- 内容主体区域 -->
+        <div class="content">
+            <div id="mapWrapper">
+                <div class="leftBtnGroup layui-form layui-form-pane">
+                    <div class="layui-input-block">
+                        <span class="name"><i class="icon icon-camera"></i>摄像头视野</span>
+                        <div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="camera">
+                            <em></em><i></i>
+                        </div>
+                    </div>
+                    <div class="layui-input-block">
+                        <span class="name"><i class="icon icon-cameraName"></i>摄像头名称</span>
+                        <div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="cameraName">
+                            <em></em><i></i>
+                        </div>
+                    </div>
+                <!-- <div class="layui-input-block">
+                    <span class="name"><i class="icon icon-video"></i>监控预览</span>
+                    <div class="layui-unselect layui-form-switch"  filter="cameraName">
                         <em></em><i></i>
                     </div>
-                </div>
-                <div class="layui-input-block">
-                    <span class="name"><i class="icon icon-cameraName"></i>摄像头名称</span>
-                    <div class="layui-unselect layui-form-switch layui-form-onswitch"  filter="cameraName">
-                        <em></em><i></i>
+                </div> -->
+            </div>
+            <div class="tool">
+                <i class="icon icon-zoom"></i>
+                <i class="icon icon-mouse"></i>
+                <i class="icon icon-shrink"></i>
+            </div>
+            <div class="minMap">
+                <img src="/src/image/min6.png" width="52" class="minAreaA minAreaimg">
+                <img src="/src/image/min9.png" width="49" class="minAreaB minAreaimg">
+                <img src="/src/image/min10.png" width="50" class="minAreaC minAreaimg">
+                <img src="/src/image/min11.png" width="21" class="minAreaD minAreaimg">
+                <img src="/src/image/min12.png" width="53" class="minAreaE minAreaimg">
+                <div class="frame"></div>
+            </div>
+            <div class="mapWrapper">
+                <!-- <div class="trimSize"> -->
+                    <!-- A区 -->
+                    <div class="AreaA imgbox">
+                        <div class="imgShade"></div>
+                        <img src="/src/image/shade6.png" data-src="6.png" id="AreaA" width="290" ondragstart="return false" class="Areaimg">
+                        <img src="/src/image/CameraA.png" ondragstart="return false" width="428" class="Camera CameraA" id="CameraA" filter="camera" >
+                        <img src="/src/image/CameraAname.png" ondragstart="return false" width="428" class="Camera CameraA" filter="cameraName" id="CameraAname">
+                    </div>
+                    <div class="imgwrapper AreaA">
+                        <div class="copyAreaA imghover imghoverbox"></div>
+                        <div class="AreaA1 imghover"></div>
+                        <div class="AreaA2 imghover"></div>
+                        <div class="AreaA3 imghover"></div>
+                    </div>
+                    <!-- B区 -->
+                    <div class="AreaB imgbox">
+                        <div class="imgShade"></div>
+                        <img src="/src/image/shade9.png" data-src="9.png" id="AreaB" width="278" ondragstart="return false" class="Areaimg">
+                    </div>
+                    <div class="imgwrapper AreaB">
+                        <div class="copyAreaB imghover imghoverbox"></div>
+                        <div class="AreaB1 imghover"></div>
+                        <div class="AreaB2 imghover"></div>
+                    </div>
+                    <!-- C区 -->
+                    <div class="AreaC imgbox">
+                        <div class="imgShade"></div>
+                        <img src="/src/image/shade10.png" data-src="10.png" id="AreaC" width="278" ondragstart="return false" class="Areaimg">
+                    </div>
+                    <div class="imgwrapper AreaC">
+                        <div class="copyAreaC imghover imghoverbox"></div>
+                        <div class="AreaC1 imghover"></div>
+                        <div class="AreaC2 imghover"></div>
+                        <div class="AreaC3 imghover"></div>
+                    </div>
+                    <!-- D区 -->
+                    <div class="AreaD imgbox">
+                        <div class="imgShade"></div>
+                        <img src="/src/image/shade11.png" data-src="11.png" id="AreaD" width="118" ondragstart="return false" class="Areaimg">
+                    </div>
+                    <div class="imgwrapper AreaD">
+                        <div class="copyAreaD imghover imghoverbox"></div>
+                        <div class="AreaD1 imghover"></div>
+                        <div class="AreaD2 imghover"></div>
+                    </div>
+                    <!-- E区 -->
+                    <div class="AreaE imgbox">
+                        <div class="imgShade"></div>
+                        <img src="/src/image/shade12.png" data-src="12.png" id="AreaE" width="300" ondragstart="return false" class="Areaimg">
+                    </div>
+                    <div class="imgwrapper AreaE">
+                        <div class="copyAreaE imghover imghoverbox"></div>
+                        <div class="AreaE1 imghover"></div>
+                        <div class="AreaE2 imghover"></div>
+                        <div class="AreaE3 imghover"></div>
                     </div>
                 </div>
-            <!-- <div class="layui-input-block">
-                <span class="name"><i class="icon icon-video"></i>监控预览</span>
-                <div class="layui-unselect layui-form-switch"  filter="cameraName">
-                    <em></em><i></i>
-                </div>
-            </div> -->
-        </div>
-        <div class="tool">
-            <i class="icon icon-zoom"></i>
-            <i class="icon icon-mouse"></i>
-            <i class="icon icon-shrink"></i>
-        </div>
-        <div class="minMap">
-            <img src="/src/image/min6.png" width="52" class="minAreaA minAreaimg">
-            <img src="/src/image/min9.png" width="49" class="minAreaB minAreaimg">
-            <img src="/src/image/min10.png" width="50" class="minAreaC minAreaimg">
-            <img src="/src/image/min11.png" width="21" class="minAreaD minAreaimg">
-            <img src="/src/image/min12.png" width="53" class="minAreaE minAreaimg">
-            <div class="frame"></div>
-        </div>
-        <div class="mapWrapper">
-            <!-- <div class="trimSize"> -->
-                <!-- A区 -->
-                <div class="AreaA imgbox">
-                    <div class="imgShade"></div>
-                    <img src="/src/image/shade6.png" data-src="6.png" id="AreaA" width="290" ondragstart="return false" class="Areaimg">
-                    <img src="/src/image/CameraA.png" ondragstart="return false" width="428" class="Camera CameraA" id="CameraA" filter="camera" >
-                    <img src="/src/image/CameraAname.png" ondragstart="return false" width="428" class="Camera CameraA" filter="cameraName" id="CameraAname">
-                </div>
-                <div class="imgwrapper AreaA">
-                    <div class="copyAreaA imghover imghoverbox"></div>
-                    <div class="AreaA1 imghover"></div>
-                    <div class="AreaA2 imghover"></div>
-                    <div class="AreaA3 imghover"></div>
-                </div>
-                <!-- B区 -->
-                <div class="AreaB imgbox">
-                    <div class="imgShade"></div>
-                    <img src="/src/image/shade9.png" data-src="9.png" id="AreaB" width="278" ondragstart="return false" class="Areaimg">
-                </div>
-                <div class="imgwrapper AreaB">
-                    <div class="copyAreaB imghover imghoverbox"></div>
-                    <div class="AreaB1 imghover"></div>
-                    <div class="AreaB2 imghover"></div>
-                </div>
-                <!-- C区 -->
-                <div class="AreaC imgbox">
-                    <div class="imgShade"></div>
-                    <img src="/src/image/shade10.png" data-src="10.png" id="AreaC" width="278" ondragstart="return false" class="Areaimg">
-                </div>
-                <div class="imgwrapper AreaC">
-                    <div class="copyAreaC imghover imghoverbox"></div>
-                    <div class="AreaC1 imghover"></div>
-                    <div class="AreaC2 imghover"></div>
-                    <div class="AreaC3 imghover"></div>
-                </div>
-                <!-- D区 -->
-                <div class="AreaD imgbox">
-                    <div class="imgShade"></div>
-                    <img src="/src/image/shade11.png" data-src="11.png" id="AreaD" width="118" ondragstart="return false" class="Areaimg">
-                </div>
-                <div class="imgwrapper AreaD">
-                    <div class="copyAreaD imghover imghoverbox"></div>
-                    <div class="AreaD1 imghover"></div>
-                    <div class="AreaD2 imghover"></div>
-                </div>
-                <!-- E区 -->
-                <div class="AreaE imgbox">
-                    <div class="imgShade"></div>
-                    <img src="/src/image/shade12.png" data-src="12.png" id="AreaE" width="300" ondragstart="return false" class="Areaimg">
-                </div>
-                <div class="imgwrapper AreaE">
-                    <div class="copyAreaE imghover imghoverbox"></div>
-                    <div class="AreaE1 imghover"></div>
-                    <div class="AreaE2 imghover"></div>
-                    <div class="AreaE3 imghover"></div>
-                </div>
+                <!-- </div> -->
             </div>
-            <!-- </div> -->
         </div>
     </div>
-    <div class="allLoading">
-        <i class="icon-loading icon"></i>
-        <span>加载中...</span>
-    </div>
+</div>
+
+<div class="allLoading">
+    <i class="icon-loading icon"></i>
+    <span>加载中...</span>
+</div>
 </body>
 <script type="text/javascript" src="/src/js/layui/layui.all.js"></script>
 <script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
-<script type="text/javascript" src="/src/js/common/mousewheel.js"></script>
-<script src="/src/js/map.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="/src/js/common/echarts.common.min.js"></script>
+<script src="/src/js/map.js">
+    
+layui.use('element', function(){
+  var element = layui.element;
+});
 </script>
 </html>

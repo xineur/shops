@@ -4,10 +4,13 @@
 }
 
 #uploader .queueList {
-	height: 240px;
-	margin: 20px;
+	height: 100%;
+	width: 100%;
 	/*border: 3px dashed #e6e6e6;*/
 	border-radius: 30px;
+}
+#uploader, #uploader .filled, #uploader .filled .filelist, #uploader .filled .filelist .imgWrap{
+	height: 100%;
 }
 
 #uploader .queueList.filled {
@@ -43,7 +46,7 @@
 
 #uploader .placeholder .webuploader-pick {
 	font-size: 16px;
-	background: rgba(0,0,0,.90)!important;
+	background: rgba(0,0,0,0)!important;
 	border-radius: 3px;
 	line-height: 44px;
 	padding: 0 30px;
@@ -52,7 +55,6 @@
 	display: inline-block;
 	margin: 0 auto 20px auto;
 	cursor: pointer;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 #uploader .placeholder .webuploader-pick-hover {
@@ -78,13 +80,10 @@
 }
 
 #uploader .filelist {
-	height:230px!important;
-	width:190px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	position: relative;
-	margin-left: 10px;
 	/*top:-50px;*/
 }
 
@@ -124,9 +123,9 @@ ul.filelist li.move {
 	float: left;
 	overflow: hidden;
 	font-size: 12px;
-    left: -26px!important;
-    top: 0px!important;
-    width: 230px!important;
+    width: 100%;
+    height: 100%;
+    left: 0;
 }
 
 ul.filelist li:hover {
@@ -215,9 +214,8 @@ ul.filelist li:hover {
 #uploader .filelist li p.imgWrap {
 	position: relative;
 	z-index: 2;
-	height: 204px;
-	width: 230px;
-	line-height: 110px;
+	height: 100%;
+	width: 100%;
 	vertical-align: middle;
 	overflow: hidden;
 	-webkit-transform-origin: 50% 50%;
@@ -233,9 +231,8 @@ ul.filelist li:hover {
 }
 
 #uploader .filelist li img {
-	width: 100%;
-	
-	
+	min-width: 100%;
+	min-height: 100%;
 }
 
 #uploader .filelist li p.error {
