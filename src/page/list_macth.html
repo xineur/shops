@@ -1,287 +1,306 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<title>商场概览</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="format-detection" content="telephone=no, address=no, email=no" />
-	<link rel="stylesheet" type="text/css" href="/src/css/css.css">
+    <title>商场概览</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <link rel="stylesheet" type="text/css" href="/src/js/layui/css/layui.css">
-	<link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/icon.css">
 	<link rel="stylesheet" type="text/css" href="/src/css/list/public.css">
 	<link rel="stylesheet" type="text/css" href="/src/css/list/list.css">
 </head>
-<style>
-	.layui-layer.layui-layer-iframe{
-		background-color: transparent;
-	}
-</style>
-<body style="background-color:#2F3242;">
-	<div class="header">
-		<div class="right-bar">
-			<!-- <div class="seekWrapper">
-				<i class="icon icon-seek"></i>
-				<input type="input" class="seek" placeholder="请输入摄像头编号">
-			</div> -->
-			<span class="icons icon1 portrait"></span>
-			<span class="icons icon2"></span>
-			<div class="avatar">
-				<img src="/src/image/ava.png" alt="">
-			</div>
-			<span class="arrow"></span>
-		</div>
-		<div class="logo"><img src="/src/image/logo.png" alt=""></div>
-	</div>
-	<div class="marketTab">
-		<div class="marketToolBox">
-			<a href="/"><i class="icon icon-cameraName"></i></a>
-            <a href="/src/page/list.html"><i class="icon icon-new icon-d active"></i></a>
-            <a href="/src/page/view.html"><i class="icon icon-video"></i></a>
-		</div>
-	</div>
-	<div class="bd">
-		<div class="con">
-			<div class="hd clear">
-				<div class="right-bar">摄像头分组显示
-					<div class="select">
-						<form class="layui-form" action="">
-							<select name="modules"  lay-filter="select">
-								<option value="1">A区摄像头</option>
-								<option value="2">B区摄像头</option>
-								<option value="3">C区摄像头</option>
-								<option value="4">D区摄像头</option>
-								<option value="5">E区摄像头</option>
-							</select>
-						</form>      
-					</div>
-				</div>
-				<span class="tit">A区摄像头(10/10)</span>
-			</div>
-		</div>
-	</div>
-		<div class="content">
-		 <div class="table_content">
-		 <div class="match-res-box">
-                    <div class="match-avatar"></div>
-                    <p class="text" style="color:#d5d5d7;">以下是相似度80%以上的结果，初步
-                            断定为<span style="color:#f5f5f5;">女性 092412(93%)</span></p>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><a href="/"><img src="/src/image/logo.png" alt=""></a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="common-input">
+                <i class="icon icon-seek"></i>
+                <input type="text" class="layui-input seek" placeholder="请输入摄像头编号">
+            </li>
+            <li class="layui-nav-item" style="height: 60px;margin-left: 20px;">
+                <i class="icons icon1 portrait" style="padding: 20px 12px 0;"></i>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="/src/image/ava.png" class="layui-nav-img">
+                    四月
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/">首页</a></dd>
+                    <dd><a href="/src/page/analyze.html">数据分析</a></dd>
+                    <dd><a href="">消息</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item common-padding"><i class="icon iconcur icon-exit"></i></li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域 -->
+            <ul class="common-nav">
+                <li class="icon iconcur icon-cameraName"><a href="/"></a></li>
+                <li class="icon iconcur icon-new icon-d active"><a href="/src/page/list.html"></a></li>
+                <li class="icon iconcur icon-video"><a href="/src/page/view.html"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body" style="left: 72px;">
+        <div class="commontool">
+            <div class="con">
+                <div class="hd clear">
+                    <div class="right-bar">摄像头分组显示
+                        <div class="select">
+                            <form class="layui-form" action="">
+                                <select name="modules"  lay-filter="select">
+                                    <option value="1">A区摄像头</option>
+                                    <option value="2">B区摄像头</option>
+                                    <option value="3">C区摄像头</option>
+                                    <option value="4">D区摄像头</option>
+                                    <option value="5">E区摄像头</option>
+                                </select>
+                            </form>      
+                        </div>
+                    </div>
+                    <span class="tit">A区摄像头(10/10)</span>
                 </div>
+            </div>
+        </div>
+        <!-- 内容主体区域 -->
+        <div class="content">
+            <div class="table_content">
+		 		<div class="match-res-box">
+	                <div class="match-avatar"></div>
+	                    <p class="text" style="color:#d5d5d7;">以下是相似度80%以上的结果，初步断定为
+	                    	<span style="color:#f5f5f5;">女性 092412(93%)</span>
+	                    </p>
+	                </div>
 			
-		  <table style="border-collapse:separate; border-spacing:0px 24px;width:1225px;">
-			<thead>
-				<tr>
-					<th style="width: 16%;padding-left: 100px;">性别</th>
-					<th style="width: 10%;">状态</th>
-					<th style="width: 12%;">最后出现时间</th>
-					<th style="width: 12%;">停留时间</th>
-					<th style="width: 18%;">穿着特征</th>
-					<th style="width: 10%;">频次</th>
-					<th style="width: 9%;colspan="2"">开车</th>
-				</tr>
-			</thead>
-			<tbody class="content_body" id="content_body">
-				<tr>
-					<td class="border_first border_two">
-						<div class="man_span commen">
-							
-						</div>
-						<span class="avatar-s"></span>
-						男性369419</td>
-					<td>在商场内</td>
-					<td>2018.02.10<p class="time">02:32PM</p></td>
-					<td>90分钟</td>
-					<td>
-						 <div class="pro">
-                            <p class="item"><span class="icon t1"></span>白色</p>
-                            <p class="item"><span class="icon t2"></span>白色</p>
-                            <p class="item"><span class="icon t3"></span>白色</p>
-                         </div>
-					</td>
-					<td>首次</td>
-					<td>是</td>
-					<td class="details">
-						<span class="dot"></span>
-						<span id="details-1">查看详情</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="border_first border_two">
-						<div class="woman_span commen">
-							
-						</div>
-						<span class="avatar-s"></span>
-						女性369419</td>
-					<td>在停车场</td>
-					<td>2018.02.10<p class="time">02:32PM</p></td>
-					<td>90分钟</td>
-					<td>
-						 <div class="pro">
-                            <p class="item"><span class="icon t1"></span>白色</p>
-                            <p class="item"><span class="icon t2"></span>白色</p>
-                            <p class="item"><span class="icon t3"></span>白色</p>
-                         </div>
-					</td>
-					<td>首次</td>
-					<td>否</td>
-					<td class="details">
-						<span class="dot"></span>
-						<span id="details-1">查看详情</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="border_first border_two">
-						<div class="child_span commen">
-						</div>
-						<span class="avatar-s"></span>
-						小孩369419</td>
-					<td>入口</td>
-					<td>2018.02.10<p class="time">02:32PM</p></td>
-					<td>90分钟</td>
-					<td>
-						 <div class="pro">
-                            <p class="item"><span class="icon t1"></span>白色</p>
-                            <p class="item"><span class="icon t2"></span>白色</p>
-                            <p class="item"><span class="icon t3"></span>白色</p>
-                         </div>
-					</td>
-					<td>首次</td>
-					<td>是</td>
-					<td class="details">
-						<span class="dot"></span>
-						<span id="details-1">查看详情</span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		</div>
-		</div>
-	</body>
+				  <table style="border-collapse:separate; border-spacing:0px 24px;width:1225px;">
+					<thead>
+						<tr>
+							<th style="width: 16%;padding-left: 100px;">性别</th>
+							<th style="width: 10%;">状态</th>
+							<th style="width: 12%;">最后出现时间</th>
+							<th style="width: 12%;">停留时间</th>
+							<th style="width: 18%;">穿着特征</th>
+							<th style="width: 10%;">频次</th>
+							<th style="width: 9%;colspan="2"">开车</th>
+						</tr>
+					</thead>
+					<tbody class="content_body" id="content_body">
+						<tr>
+							<td class="border_first border_two">
+								<div class="man_span commen">
+									
+								</div>
+								<span class="avatar-s"></span>
+								男性369419</td>
+							<td>在商场内</td>
+							<td>2018.02.10<p class="time">02:32PM</p></td>
+							<td>90分钟</td>
+							<td>
+								 <div class="pro">
+		                            <p class="item"><span class="icon t1"></span>白色</p>
+		                            <p class="item"><span class="icon t2"></span>白色</p>
+		                            <p class="item"><span class="icon t3"></span>白色</p>
+		                         </div>
+							</td>
+							<td>首次</td>
+							<td>是</td>
+							<td class="details">
+								<span class="dot"></span>
+								<span id="details-1">查看详情</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="border_first border_two">
+								<div class="woman_span commen">
+									
+								</div>
+								<span class="avatar-s"></span>
+								女性369419</td>
+							<td>在停车场</td>
+							<td>2018.02.10<p class="time">02:32PM</p></td>
+							<td>90分钟</td>
+							<td>
+								 <div class="pro">
+		                            <p class="item"><span class="icon t1"></span>白色</p>
+		                            <p class="item"><span class="icon t2"></span>白色</p>
+		                            <p class="item"><span class="icon t3"></span>白色</p>
+		                         </div>
+							</td>
+							<td>首次</td>
+							<td>否</td>
+							<td class="details">
+								<span class="dot"></span>
+								<span id="details-1">查看详情</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="border_first border_two">
+								<div class="child_span commen">
+								</div>
+								<span class="avatar-s"></span>
+								小孩369419</td>
+							<td>入口</td>
+							<td>2018.02.10<p class="time">02:32PM</p></td>
+							<td>90分钟</td>
+							<td>
+								 <div class="pro">
+		                            <p class="item"><span class="icon t1"></span>白色</p>
+		                            <p class="item"><span class="icon t2"></span>白色</p>
+		                            <p class="item"><span class="icon t3"></span>白色</p>
+		                         </div>
+							</td>
+							<td>首次</td>
+							<td>是</td>
+							<td class="details">
+								<span class="dot"></span>
+								<span id="details-1">查看详情</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+        </div>
+    </div>
+</div>
 
-
-</html>
-<script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
+<div class="allLoading">
+    <i class="icon-loading icon"></i>
+    <span>加载中...</span>
+</div>
+</body>
 <script type="text/javascript" src="/src/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
 <script type="text/javascript">
-	$(function() {
-		var tag = false,
-			ox = 0,
-			left = 0,
-			bgleft = 0;
-	   $('.progress_btn').css('left', "80%");
-	   $('.teat').html("80%")
-	   $('.progress_bar').width("80%");
-		$('.progress_btn').mousedown(function(e) {
-			ox = e.pageX - left;
-			tag = true;
-		});
-		$(document).mouseup(function() {
-			tag = false;
-		});
-		$('.progress_1').mousemove(function(e) { //鼠标移动
-			if (tag) {
-				left = e.pageX - ox;
-				if (left <= 0) {
-					left = 0;
-				} else if (left > 300) {
-					left = 300;
-				}
-				$('.progress_btn').css('left', left);
-				$('.progress_bar').width(left);
-				$('.teat').html(parseInt((left / 300) * 100) + '%');
-			}
-		});
-		$('.progress_bg').click(function(e) { //鼠标点击
-			if (!tag) {
-				bgleft = $('.progress_bg').offset().left;
-				left = e.pageX - bgleft;
-				if (left <= 0) {
-					left = 0;
-				} else if (left > 300) {
-					left = 300;
-				}
-				$('.progress_btn').css('left', left);
-				$('.progress_bar').animate({
-					width: left
-				}, 300);
-				$('.teat').html(parseInt((left / 300) * 100) + '%');
-				}
-			});
-		});
-	</script>
-	
-	
-    <script type="text/javascript">
-	$('#content_body').on('click', '.details',function (event) { 
+$(function() {
+    var tag = false,
+        ox = 0,
+        left = 0,
+        bgleft = 0;
+    $('.progress_btn').css('left', "80%");
+    $('.teat').html("80%")
+    $('.progress_bar').width("80%");
+    $('.progress_btn').mousedown(function(e) {
+        ox = e.pageX - left;
+        tag = true;
+    });
+    $(document).mouseup(function() {
+        tag = false;
+    });
+    $('.progress_1').mousemove(function(e) { //鼠标移动
+        if (tag) {
+            left = e.pageX - ox;
+            if (left <= 0) {
+                left = 0;
+            } else if (left > 300) {
+                left = 300;
+            }
+            $('.progress_btn').css('left', left);
+            $('.progress_bar').width(left);
+            $('.teat').html(parseInt((left / 300) * 100) + '%');
+        }
+    });
+    $('.progress_bg').click(function(e) { //鼠标点击
+        if (!tag) {
+            bgleft = $('.progress_bg').offset().left;
+            left = e.pageX - bgleft;
+            if (left <= 0) {
+                left = 0;
+            } else if (left > 300) {
+                left = 300;
+            }
+            $('.progress_btn').css('left', left);
+            $('.progress_bar').animate({
+                width: left
+            }, 300);
+            $('.teat').html(parseInt((left / 300) * 100) + '%');
+        }
+    });
+});
+</script>
+    
+    
+<script type="text/javascript">
+$(function(){
+	$('.common-input').remove();
+    setTimeout(function(){
+        $('.allLoading').remove();
+    },200)
+    $('#content_body').on('click', '.details',function (event) { 
         event.stopPropagation();//阻止事件冒泡
         $(this).find("#details-1").toggle();
         $(this).parent().siblings().find(".details").find("#details-1").hide();
         $(this).find("#details-1").click(function(){
-         	location.href="/src/page/list_macth.html";
+            location.href="/src/page/list_macth.html";
         })
         var tag = $(this).find("#details-1");
         var flag = true;
         $(document).bind("click",function(e){
-         	var target = $(e.target);
-         	if(target.closest(tag).length == 0 && flag == true){
-         		$(tag).hide();
-         		flag = false;
-         	}
+            var target = $(e.target);
+            if(target.closest(tag).length == 0 && flag == true){
+                $(tag).hide();
+                flag = false;
+            }
         });
-	  });
-     $(".portrait").on("click",function(){
+    });
+    $(".portrait").on("click",function(){
         layer_a=layer.open({
-		  type: 2, 
-		  closeBtn: 1,
-		  title: false,
-		  scrollbar: false,
-		  shade: [0.8, '#393D49'],
-		  area: ['100%', '100%'],
-		  content:'/src/page/list_pop.html',
-		});
-	  });
+            type: 2, 
+            closeBtn: 1,
+            title: false,
+            scrollbar: false,
+            shade: [0.8, '#393D49'],
+            area: ['100%', '100%'],
+            content:'/src/page/list_pop.html',
+        });
+    });
 
 
     layui.flow.load({
-	    elem: '#content_body' //流加载容器
-	    ,scrollElem: '.table_content' //滚动条所在元素，一般不用填，此处只是演示需要。
-	    ,done: function(page, next){ //执行下一页的回调
-	    
-	      //模拟数据插入
-	      setTimeout(function(){
-	        var lis = [];
-	        for(var i = 0; i < 4; i++){
-	          lis.push('<tr>\
-					<td class="border_first border_two">\
-						<div class="child_span commen">\
-						</div>\
-						<span class="avatar-s"></span>\
-						小孩369419</td>\
-					<td>入口</td>\
-					<td>2018.02.10<p class="time">02:32PM</p></td>\
-					<td>90分钟</td>\
-					<td>\
-						 <div class="pro">\
+        elem: '#content_body' //流加载容器
+        ,scrollElem: '.table_content' //滚动条所在元素，一般不用填，此处只是演示需要。
+        ,done: function(page, next){ //执行下一页的回调
+        
+          //模拟数据插入
+        setTimeout(function(){
+            var lis = [];
+            for(var i = 0; i < 4; i++){
+                lis.push('<tr>\
+                    <td class="border_first border_two">\
+                        <div class="child_span commen">\
+                        </div>\
+                        <span class="avatar-s"></span>\
+                        小孩369419</td>\
+                    <td>入口</td>\
+                    <td>2018.02.10<p class="time">02:32PM</p></td>\
+                    <td>90分钟</td>\
+                    <td>\
+                         <div class="pro">\
                             <p class="item"><span class="icon t1"></span>白色</p>\
                             <p class="item"><span class="icon t2"></span>白色</p>\
                             <p class="item"><span class="icon t3"></span>白色</p>\
                          </div>\
-					</td>\
-					<td>首次</td>\
-					<td>是</td>\
-					<td class="details">\
-						<span class="dot"></span>\
-						<span id="details-1">查看详情</span>\
-					</td>\
-				</tr>')
-	        }
-	        
-	        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
-	        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-	        next(lis.join(''), page < 5); //假设总页数为 10
-	      }, 500);
+                    </td>\
+                    <td>首次</td>\
+                    <td>是</td>\
+                    <td class="details">\
+                        <span class="dot"></span>\
+                        <span id="details-1">查看详情</span>\
+                    </td>\
+                </tr>')
+            }
+            next(lis.join(''), page < 5); //假设总页数为 10
+          }, 500);
           
-	    }
-  	});
-	</script>
+        }
+    });
+})
+</script>
 </html>

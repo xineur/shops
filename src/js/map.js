@@ -204,6 +204,7 @@
 		    })
 		},
 		setheight: function(){//初始化事件
+			console.log($('.common-input,.portrait').remove())
 			$('.mapWrapper').height($('.mapWrapper').width() / config.heightRatio);
 			$('.minMap').height($('.minMap').width() / config.heightRatio);
 			$('.frame').width($('.minMap').width() * config.scale).height($('.minMap').height()*config.scale);

@@ -121,6 +121,7 @@ var commonData = {
             }
         }
         for (var i = 0; i < data.length; i++) {
+            console.log(data)
             var seriesObj = {
                 name: data[i].name,
                 type: 'pie',
@@ -154,7 +155,7 @@ var commonData = {
                         fontWeight: 600
                     }
                 }, {
-                    value: data[0].value * 4 / 3 - data[i].value,
+                    value: 100- data[i].value,
                     name: 'invisible',
                     itemStyle: placeHolderStyle,
                     label: {
@@ -235,8 +236,8 @@ var methods = {
                     utils.getSexData(e.value)
                 });
                 flow.load({
-                    elem: '#collapse'
-                    ,scrollElem: '#collapse'
+                    elem: '.rightC'
+                    ,scrollElem: '.rightC'
                     ,done: function(page, next){
                         setTimeout(function(){
                             var lis = [];

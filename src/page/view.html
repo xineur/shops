@@ -1,125 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>详细信息</title>
+    <title>商场概览</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width" />
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <link rel="stylesheet" type="text/css" href="/src/css/css.css">
     <link rel="stylesheet" type="text/css" href="/src/js/layui/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/icon.css">
     <link rel="stylesheet" type="text/css" href="/src/css/view/view.css"/>
 </head>
 <body>
-    <div class="header">
-        <div class="right-bar">
-            <div class="seekWrapper">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><a href="/"><img src="/src/image/logo.png" alt=""></a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="common-input">
                 <i class="icon icon-seek"></i>
-                <input type="input" class="seek" placeholder="请输入摄像头编号">
-            </div>
-            <!-- <span class="icons icon1"></span> -->
-            <span class="icons icon2"></span>
-            <div class="avatar">
-                <img src="/src/image/ava.png" alt="">
-            </div>
-            <span class="arrow"></span>
-        </div>
-        <div class="logo"><img src="/src/image/logo.png" alt=""></div>
-    </div>
-    <div class="marketTab">
-        <div class="marketToolBox">
-            <a href="/"><i class="icon icon-cameraName"></i></a>
-            <a href="/src/page/list.html"><i class="icon icon-new icon-d"></i></a>
-            <a href="/src/page/view.html"><i class="icon icon-video active"></i></a>
-        </div>
-    </div>
-    <div class="bd">
-        <div class="con">
-            <div class="hd clear">
-                <div class="right-bar">摄像头分组显示
-                    <div class="select">
-                        <form class="layui-form" action="">
-                            <select name="modules"  lay-filter="select">
-                                <option value="1">A区摄像头</option>
-                                <option value="2">B区摄像头</option>
-                                <option value="3">C区摄像头</option>
-                                <option value="4">D区摄像头</option>
-                                <option value="5">E区摄像头</option>
-                            </select>
-                        </form>      
-                    </div>
-                </div>
-                <span class="tit">A区摄像头(10/10)</span>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <!--  -->
-        <style type="text/css">
-        #VideoImgs {
-            width: 100%;
-            height: 100%;
-        }
-        #VideoImgs .videoWrapper{
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 100%;
-        }
-        .videoWrapper .videoImg{
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            background-size: cover; 
-        }
-        .videoWrapper .videopadding {
-            padding: 15px;
-        }
-        .videoWrapper .videoText{
-            font-size: 20px;
-            font-weight: 100;
-            line-height: 40px;
-            text-align: center;
-            color: #D5D6D9;
-        }
-        .videoWrapper .videoText .icon{
-            font-size: 24px;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 7px;
-        }
-        .layui-flow-more{
-            clear: both;
-        }
-    </style>
-    <div id="VideoImgs">
-        <ul class="layui-row videoWrapper">
-            <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
-                <div class="videoImg" style="background-image: url('/src/image/p1.png')">
-
-                </div>
-                <p class="videoText"><i class="icon icon-cameraName"></i><span>canm002</span></p>
+                <input type="text" class="layui-input seek" placeholder="请输入摄像头编号">
             </li>
-            <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
-                <div class="videoImg" style="background-image: url('/src/image/p1.png')">
-
-                </div>
-                <p class="videoText"><i class="icon icon-cameraName"></i><span>canm001</span></p>
+            <li class="layui-nav-item" style="height: 60px;margin-left: 20px;">
+                <i class="icons icon1 portrait" style="padding: 20px 12px 0;"></i>
             </li>
-            <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
-                <div class="videoImg" style="background-image: url('/src/image/p1.png')">
-
-                </div>
-                <p class="videoText"><i class="icon icon-cameraName"></i><span>canm001</span></p>
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="/src/image/ava.png" class="layui-nav-img">
+                    四月
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/">首页</a></dd>
+                    <dd><a href="/src/page/analyze.html">数据分析</a></dd>
+                    <dd><a href="">消息</a></dd>
+                </dl>
             </li>
+            <li class="layui-nav-item common-padding"><i class="icon iconcur icon-exit"></i></li>
         </ul>
     </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域 -->
+            <ul class="common-nav">
+                <li class="icon iconcur icon-cameraName"><a href="/"></a></li>
+                <li class="icon iconcur icon-new icon-d"><a href="/src/page/list.html"></a></li>
+                <li class="icon iconcur icon-video active"><a href="/src/page/view.html"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body" style="left: 72px;">
+        <div class="commontool">
+            <div class="con">
+                <div class="hd clear">
+                    <div class="right-bar">摄像头分组显示
+                        <div class="select">
+                            <form class="layui-form" action="">
+                                <select name="modules"  lay-filter="select">
+                                    <option value="1">A区摄像头</option>
+                                    <option value="2">B区摄像头</option>
+                                    <option value="3">C区摄像头</option>
+                                    <option value="4">D区摄像头</option>
+                                    <option value="5">E区摄像头</option>
+                                </select>
+                            </form>      
+                        </div>
+                    </div>
+                    <span class="tit">A区摄像头(10/10)</span>
+                </div>
+            </div>
+        </div>
+        <!-- 内容主体区域 -->
+        <div class="content">
+            <div id="VideoImgs">
+                <ul class="layui-row videoWrapper">
+                    <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
+                        <div class="videoImg" style="background-image: url('/src/image/p1.png')">
+
+                        </div>
+                        <p class="videoText"><i class="icon icon-cameraName"></i><span>canm002</span></p>
+                    </li>
+                    <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
+                        <div class="videoImg" style="background-image: url('/src/image/p1.png')">
+
+                        </div>
+                        <p class="videoText"><i class="icon icon-cameraName"></i><span>canm001</span></p>
+                    </li>
+                    <li class="layui-col-xs12 layui-col-sm6 layui-col-md4 videopadding">
+                        <div class="videoImg" style="background-image: url('/src/image/p1.png')">
+
+                        </div>
+                        <p class="videoText"><i class="icon icon-cameraName"></i><span>canm001</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="allLoading">
+    <i class="icon-loading icon"></i>
+    <span>加载中...</span>
 </div>
 </body>
 <script type="text/javascript" src="/src/js/layui/layui.all.js"></script>
 <script type="text/javascript" src="/src/js/common/jquery.min.js"></script>
 <script type="text/javascript" src="/src/js/view/view.js"></script>
-<script type="text/javascript">
-    
-</script>
 </html>

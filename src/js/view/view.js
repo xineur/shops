@@ -2,48 +2,50 @@
  * Created by isoftstone on 2018/8/2.
  */
 
-var config = {
-        videoImgClass: 'layui-col-xs12 layui-col-sm6 layui-col-md4',
-        newVideoImgClass: 'layui-col-xs12 layui-col-md4 layui-col-sm4',
-        itemImgClass: 'layui-col-xs12 layui-col-sm6 layui-col-md4',
-        newItemImgClass: 'layui-col-md12 layui-col-sm12',
-        VideoFlag: false,
+ var config = {
+    videoImgClass: 'layui-col-xs12 layui-col-sm6 layui-col-md4',
+    newVideoImgClass: 'layui-col-xs12 layui-col-md4 layui-col-sm4',
+    itemImgClass: 'layui-col-xs12 layui-col-sm6 layui-col-md4',
+    newItemImgClass: 'layui-col-md12 layui-col-sm12',
+    VideoFlag: false,
         imgBox: [],//用来存储后台获取到的图片   搜索'删除'删除家属
         video: {name: 'demo001', date: "2018/1/1", src:'/src/image/demo.mp4'},//点击视频数据
     }
     //imgbox  格式 [{name: xxx,src:xxx}]  name名字   src  路径
     //video   格式 {name: xxx, src: xxx, date: xxx}
-var utils = {
-    height: function(){
-        $('.videoImg').height($('.videoImg').width()*3/4);
-    },
-    video: function(){
-        $('#view').remove();
-        $(this).closest('.videoWrapper').removeClass(config.videoImgClass).addClass(config.newVideoImgClass).before('<div id="view" class="layui-col-xs12 layui-col-sm8 layui-col-md8">\
-                    <div id="list_Myview" style="display: none;">\
-                        <div class="sl_top">\
-                            <p><span>'+config.video.name+'</span>'+config.video.date+'</p>\
-                        </div>\
-                        <video id="sl_name" controls="controls" pause() src="'+config.video.src+'" autoplay="autoplay" play() controlsList="nodownload" preload="autoplay" autoplay="autoplay" controls="false" load()>\
-                            <source src="'+config.video.src+'"  type="video/ogg" />\
-                            <source src="'+config.video.src+'"  type="video/mp4" />\
-                            <embed src="'+config.video.src+'" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>\
-                        </video>\
-                    </div>\
-                    <div id="list_view">\
-                        <ul>\
-                        </ul>\
-                    </div>\
+    var utils = {
+        height: function(){
+            $('.videoImg').height($('.videoImg').width()*3/4);
+        },
+        video: function(){
+            $('.videoHide').show().removeClass('videoHide');
+            $('#view').remove();
+            $(this).closest('.videoWrapper').removeClass(config.videoImgClass).addClass(config.newVideoImgClass).before('<div id="view" class="layui-col-xs12 layui-col-sm8 layui-col-md8">\
+                <div id="list_Myview" style="display: none;">\
+                <div class="sl_top">\
+                <p><span>'+config.video.name+'</span>'+config.video.date+'</p>\
+                </div>\
+                <video id="sl_name" controls="controls" pause() src="'+config.video.src+'" autoplay="autoplay" play() controlsList="nodownload" preload="autoplay" autoplay="autoplay" controls="false" load()>\
+                <source src="'+config.video.src+'"  type="video/ogg" />\
+                <source src="'+config.video.src+'"  type="video/mp4" />\
+                <embed src="'+config.video.src+'" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>\
+                </video>\
+                </div>\
+                <div id="list_view">\
+                <ul>\
+                </ul>\
+                </div>\
                 </div>');
-        $('.videopadding').removeClass(config.itemImgClass).addClass(config.newItemImgClass);
-        config.VideoFlag = true;
-        $("#list_Myview").show();
-        
-        setTimeout(function(){
-            utils.height();
-        },100)
-    }
-}
+            $('.videopadding').removeClass(config.itemImgClass).addClass(config.newItemImgClass);
+            config.VideoFlag = true;
+            $("#list_Myview").show();
+            var that = this;
+            setTimeout(function(){
+                utils.height();
+                $(that).hide().addClass('videoHide');
+            },100)
+        }
+    };
     var methods = {
         seek: function(){
             $('.seek').on('blur',function(){
@@ -57,7 +59,7 @@ var utils = {
         },
         click: function(){//图片点击事件
             $('.videoWrapper').on('click', '.videopadding',function(){
-                utils.video.call(this)
+                utils.video.call(this);
             });
         }, 
         flow: function(){//流加载
@@ -90,6 +92,30 @@ var utils = {
                     }
                 });  
             });
+        },
+        mounted:function(){
+            var loadFlage = true,time = '';
+            $('.portrait').remove();
+            function load(){
+                $('img').each(function(){
+                    if($(this).width() === 0){
+                        loadFlage = false;
+                        return false;
+                    }
+                });
+                if(loadFlage){
+                    clearTimeout(time);
+                    setTimeout(function(){
+                        $('.allLoading').remove();
+                    },200)
+                }else{
+                    loadFlage = true;
+                    time = setTimeout(function(){
+                        load();
+                    },500);
+                }
+            }
+            load();
         }
     }
     utils.height();
@@ -98,4 +124,4 @@ var utils = {
             methods[i]();
         }
     })();
-	
+
